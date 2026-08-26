@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>N+ Media & Digital | Digital Solutions That Drive Real Growth</title>
+  <meta name="description" content="N+ Media & Digital builds modern websites, apps, AI automation and digital solutions for growing businesses.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --blue: #008cff;
+      --blue2: #00c8ff;
+      --white: #ffffff;
+      --silver: #bfc7d5;
+      --dark: #030508;
+      --card: rgba(8, 15, 25, 0.78);
+      --border: rgba(0, 145, 255, 0.35);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(2, 5, 9, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 140, 255, 0.15);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--blue2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #dce5f2;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue2);
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border: 1px solid var(--blue);
+      border-radius: 30px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: var(--blue);
+      box-shadow: 0 0 25px rgba(0, 140, 255, 0.5);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 130px 20px 80px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(0, 110, 255, 0.17), transparent 35%),
+        #030508;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(0, 140, 255, 0.15);
+      border-radius: 50%;
+      box-shadow:
+        0 0 100px rgba(0, 130, 255, 0.12),
+        inset 0 0 100px rgba(0, 130, 255, 0.08);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+    }
+
+    .eyebrow {
+      color: var(--blue2);
+      letter-spacing: 5px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--blue2);
+      text-shadow: 0 0 35px rgba(0, 180, 255, 0.4);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 30px auto;
+      color: #b9c5d4;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .btn {
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #006cff, #00c8ff);
+      box-shadow: 0 0 30px rgba(0, 140, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 45px rgba(0, 180, 255, 0.5);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue2);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 110px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title small {
+      color: var(--blue2);
+      letter-spacing: 4px;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: clamp(35px, 5vw, 58px);
+      margin-top: 12px;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 18px auto;
+      color: #9daabd;
+      line-height: 1.7;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(10, 20, 34, 0.9),
+        rgba(3, 8, 14, 0.9)
+      );
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: var(--blue);
+      filter: blur(80px);
+      opacity: 0;
+      top: -40px;
+      right: -40px;
+      transition: 0.35s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--blue);
+      box-shadow: 0 15px 45px rgba(0, 100, 255, 0.16);
+    }
+
+    .card:hover::before {
+      opacity: 0.25;
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #9daabd;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: var(--blue2);
+    }
+
+    .about-text p {
+      color: #aab6c6;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .value {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(5, 12, 20, 0.7);
+    }
+
+    .value strong {
+      display: block;
+      color: var(--blue2);
+      margin-bottom: 8px;
+    }
+
+    .value span {
+      color: #9daabd;
+      font-size: 14px;
+    }
+
+    /* WHY */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(5, 12, 20, 0.65);
+    }
+
+    .why-card h3 {
+      margin: 15px 0 10px;
+    }
+
+    .why-card p {
+      color: #9daabd;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px 12px;
+    }
+
+    .number {
+      width: 55px;
+      height: 55px;
+      margin: auto auto 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--blue);
+      color: var(--blue2);
+      font-weight: bold;
+      box-shadow: 0 0 25px rgba(0,140,255,0.15);
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #8997a9;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* CTA */
+
+    .cta {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 80px 30px;
+      text-align: center;
+      border-radius: 30px;
+      border: 1px solid var(--blue);
+      background:
+        radial-gradient(circle, rgba(0,110,255,0.2), transparent 55%),
+        #050a11;
+      box-shadow: 0 0 80px rgba(0,110,255,0.12);
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #aeb9c8;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 50px 20px;
+      text-align: center;
+      background: #020407;
+    }
+
+    footer .logo {
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #738094;
+      font-size: 13px;
+      margin: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+      color: #aeb9c8;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-box {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        height: 68px;
+      }
+
+      .nav-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 80px 18px;
+      }
+
+      .services-grid,
+      .why-grid,
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-text h2 {
+        font-size: 38px;
+      }
+
+      .cta {
+        margin: 50px 15px;
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <nav>
+
+      <a href="#home" class="logo">
+        N+ <span>MEDIA & DIGITAL</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why N+</a></li>
+        <li><a href="#process">Process</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-btn">GET A QUOTE</a>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main id="home">
+
+    <div class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          IDEAS • DESIGN • IMPACT
+        </div>
+
+        <h1>
+          DIGITAL SOLUTIONS<br>
+          THAT DRIVE <span>REAL GROWTH.</span>
+        </h1>
+
+        <p>
+          We build modern websites, apps, AI automation and digital
+          experiences that help businesses grow, scale and stand out.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#contact" class="btn btn-primary">
+            START YOUR PROJECT →
+          </a>
+
+          <a href="#services" class="btn btn-outline">
+            EXPLORE SERVICES
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="section-title">
+        <small>WHAT WE DO</small>
+        <h2>Our Services</h2>
+        <p>
+          Modern digital solutions designed to help businesses
+          build, grow and compete in a digital-first world.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Website Development</h3>
+          <p>
+            Modern, responsive and high-performance websites
+            designed for credibility and growth.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>App Development</h3>
+          <p>
+            Custom mobile applications built around your
+            business requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>AI Automation</h3>
+          <p>
+            Smart workflows that reduce repetitive work,
+            save time and improve efficiency.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Digital Marketing</h3>
+          <p>
+            Data-driven strategies designed to increase
+            visibility, leads and business growth.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Intuitive interfaces and user experiences
+            designed around your audience.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎥</div>
+          <h3>Video Production</h3>
+          <p>
+            Creative visual content that communicates your
+            brand story and captures attention.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📲</div>
+          <h3>Social Media Marketing</h3>
+          <p>
+            Strategic content and campaigns that build
+            stronger online brand presence.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎯</div>
+          <h3>Paid Advertising</h3>
+          <p>
+            Targeted advertising campaigns focused on
+            qualified traffic, leads and conversions.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="about-box">
+
+        <div class="about-text">
+
+          <small class="eyebrow">ABOUT N+</small>
+
+          <h2>
+            Technology.<br>
+            Creativity.<br>
+            <span>Growth.</span>
+          </h2>
+
+          <p>
+            N+ Media & Digital creates modern digital solutions
+            that combine technology, creativity and strategy.
+          </p>
+
+          <p>
+            Our goal is simple — understand your vision,
+            build the right digital solution and help your
+            business move forward.
+          </p>
+
+        </div>
+
+        <div class="values">
+
+          <div class="value">
+            <strong>INNOVATION</strong>
+            <span>Smart ideas for modern businesses.</span>
+          </div>
+
+          <div class="value">
+            <strong>QUALITY</strong>
+            <span>Clean, reliable and professional work.</span>
+          </div>
+
+          <div class="value">
+            <strong>TECHNOLOGY</strong>
+            <span>Modern tools and digital solutions.</span>
+          </div>
+
+          <div class="value">
+            <strong>GROWTH</strong>
+            <span>Solutions built around your goals.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY N+ -->
+
+    <section id="why">
+
+      <div class="section-title">
+        <small>WHY N+</small>
+        <h2>More Than A Service.</h2>
+        <p>
+          We aim to become a technology partner that grows
+          with your business.
+        </p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="icon">💡</div>
+          <h3>Innovation</h3>
+          <p>
+            Modern ideas and technologies designed for
+            today's digital world.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">💎</div>
+          <h3>Quality</h3>
+          <p>
+            Attention to detail with quality at every
+            stage of development.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">⚡</div>
+          <h3>Speed</h3>
+          <p>
+            Efficient project execution without
+            unnecessary delays.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">🎯</div>
+          <h3>Results Driven</h3>
+          <p>
+            Solutions designed around meaningful
+            business objectives.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">🤝</div>
+          <h3>Client First</h3>
+          <p>
+            Your goals and requirements guide
+            every decision we make.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">📈</div>
+          <h3>Growth Focused</h3>
+          <p>
+            Digital solutions built to support
+            long-term business growth.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+      <div class="section-title">
+        <small>OUR PROCESS</small>
+        <h2>From Idea To Impact</h2>
+        <p>
+          A simple, transparent and effective process.
+        </p>
+      </div>
+
+      <div class="process">
+
+        <div class="step">
+          <div class="number">01</div>
+          <h3>DISCOVER</h3>
+          <p>Understand your goals and requirements.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">02</div>
+          <h3>PLAN</h3>
+          <p>Create the strategy and roadmap.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">03</div>
+          <h3>DESIGN</h3>
+          <p>Create intuitive digital experiences.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">04</div>
+          <h3>BUILD</h3>
+          <p>Develop with modern technology.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">05</div>
+          <h3>LAUNCH</h3>
+          <p>Test, optimize and launch.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">06</div>
+          <h3>GROW</h3>
+          <p>Support and improve continuously.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <div class="cta" id="contact">
+
+      <h2>LET'S BUILD<br><span style="color:#00c8ff;">SOMETHING GREAT.</span></h2>
+
+      <p>
+        Have an idea? Let's turn it into a digital solution.
+      </p>
+
+      <a href="mailto:hello@nplusmediadigital.com"
+         class="btn btn-primary">
+        START YOUR PROJECT →
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="logo">
+      N+ <span>MEDIA & DIGITAL</span>
+    </div>
+
+    <p>
+      Your Vision. Our Technology. Real Results.
+    </p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why N+</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>
+      © 2026 N+ Media & Digital. All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
