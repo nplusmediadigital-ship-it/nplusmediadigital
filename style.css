@@ -1,29 +1,25 @@
-/* =====================================================
-   N+ MEDIA & DIGITAL
-   Premium Dark / Electric Blue Design System
-   ===================================================== */
-
 :root {
-  --bg: #030508;
-  --bg-soft: #070b12;
-  --card: #0a1019;
-  --card-hover: #0d1724;
+  --bg: #020407;
+  --bg-soft: #050a11;
+  --card: #07101b;
+  --card-hover: #0a1726;
 
   --white: #ffffff;
   --text: #e8eef7;
-  --muted: #9baabd;
+  --muted: #9aaabd;
 
   --blue: #0077ff;
-  --blue-light: #00c8ff;
+  --cyan: #00c8ff;
   --blue-dark: #0047b8;
 
   --border: rgba(0, 157, 255, 0.28);
-  --border-hover: rgba(0, 200, 255, 0.75);
+  --border-hover: rgba(0, 200, 255, 0.85);
 
-  --glow: 0 0 35px rgba(0, 140, 255, 0.25);
+  --glow: 0 0 40px rgba(0, 150, 255, 0.25);
 
   --container: 1200px;
 }
+
 
 /* =========================
    RESET
@@ -37,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -48,30 +45,26 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
 button,
 input,
-textarea,
-select {
+textarea {
   font: inherit;
 }
-
-/* =========================
-   SELECTION
-========================= */
 
 ::selection {
   background: var(--blue);
   color: white;
 }
+
 
 /* =========================
    SCROLLBAR
@@ -82,16 +75,17 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-  background: #020407;
+  background: #010204;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     var(--blue),
-    var(--blue-light)
+    var(--cyan)
   );
   border-radius: 20px;
 }
+
 
 /* =========================
    CONTAINER
@@ -102,75 +96,99 @@ select {
   margin: auto;
 }
 
+
 /* =========================
-   NAVIGATION
+   HEADER
 ========================= */
 
 header {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
+
   z-index: 9999;
 
   background: rgba(2, 5, 9, 0.78);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid rgba(0, 150, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid
+    rgba(0, 157, 255, 0.14);
 }
 
 nav {
   width: min(92%, var(--container));
+
   height: 78px;
+
   margin: auto;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 21px;
+
   font-weight: 900;
+
   letter-spacing: 1px;
+
   white-space: nowrap;
 }
 
 .logo span {
-  color: var(--blue-light);
+  color: var(--cyan);
 }
 
 .nav-links {
   display: flex;
+
   align-items: center;
-  gap: 28px;
+
+  gap: 27px;
+
   list-style: none;
 }
 
 .nav-links a {
   position: relative;
+
   color: var(--text);
+
   font-size: 14px;
+
   transition: 0.3s ease;
 }
 
 .nav-links a::after {
   content: "";
+
   position: absolute;
+
   left: 0;
+
   bottom: -8px;
+
   width: 0;
+
   height: 2px;
 
-  background: var(--blue-light);
-  box-shadow: 0 0 10px var(--blue-light);
+  background: var(--cyan);
+
+  box-shadow:
+    0 0 12px var(--cyan);
 
   transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--blue-light);
+  color: var(--cyan);
 }
 
 .nav-links a:hover::after {
@@ -178,28 +196,35 @@ nav {
 }
 
 .nav-btn {
-  padding: 11px 20px;
+  padding: 12px 20px;
+
   border: 1px solid var(--blue);
+
   border-radius: 30px;
 
   font-size: 13px;
-  font-weight: 700;
+
+  font-weight: 800;
 
   transition: 0.3s ease;
 }
 
 .nav-btn:hover {
-  background: linear-gradient(
-    90deg,
-    var(--blue),
-    var(--blue-light)
-  );
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--cyan)
+    );
 
   box-shadow:
-    0 0 20px rgba(0, 150, 255, 0.45);
+    0 0 25px rgba(0, 160, 255, 0.45);
 
   transform: translateY(-2px);
 }
+
 
 /* =========================
    HERO
@@ -208,14 +233,19 @@ nav {
 .hero {
   min-height: 100vh;
 
+  padding:
+    150px
+    20px
+    90px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   position: relative;
-  overflow: hidden;
 
-  padding: 150px 20px 90px;
+  overflow: hidden;
 
   text-align: center;
 
@@ -238,18 +268,22 @@ nav {
 
   position: absolute;
 
-  width: 650px;
-  height: 650px;
+  width: 680px;
+  height: 680px;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(0, 160, 255, 0.13);
+  border: 1px solid
+    rgba(0, 160, 255, 0.13);
 
   box-shadow:
-    0 0 100px rgba(0, 130, 255, 0.12),
-    inset 0 0 100px rgba(0, 130, 255, 0.07);
+    0 0 100px
+      rgba(0, 130, 255, 0.12),
+    inset 0 0 100px
+      rgba(0, 130, 255, 0.07);
 
-  animation: heroPulse 6s ease-in-out infinite;
+  animation:
+    heroPulse 6s ease-in-out infinite;
 }
 
 .hero::after {
@@ -257,8 +291,7 @@ nav {
 
   position: absolute;
 
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background-image:
     linear-gradient(
@@ -273,29 +306,33 @@ nav {
 
   background-size: 55px 55px;
 
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black,
-    transparent
-  );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black,
+      transparent
+    );
 
   pointer-events: none;
 }
 
 .hero-content {
   max-width: 1000px;
+
   position: relative;
+
   z-index: 2;
 }
 
 .eyebrow {
   display: inline-block;
 
-  color: var(--blue-light);
+  color: var(--cyan);
 
   font-size: 12px;
-  font-weight: 800;
+
+  font-weight: 900;
 
   letter-spacing: 5px;
 
@@ -303,7 +340,8 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(46px, 8vw, 94px);
+  font-size:
+    clamp(46px, 8vw, 94px);
 
   line-height: 0.95;
 
@@ -313,11 +351,13 @@ nav {
 }
 
 .hero h1 span {
-  color: var(--blue-light);
+  color: var(--cyan);
 
   text-shadow:
-    0 0 20px rgba(0, 190, 255, 0.45),
-    0 0 50px rgba(0, 120, 255, 0.25);
+    0 0 20px
+      rgba(0, 190, 255, 0.45),
+    0 0 55px
+      rgba(0, 120, 255, 0.28);
 }
 
 .hero p {
@@ -345,6 +385,7 @@ nav {
   margin-top: 32px;
 }
 
+
 /* =========================
    BUTTONS
 ========================= */
@@ -362,7 +403,8 @@ nav {
   border-radius: 30px;
 
   font-size: 14px;
-  font-weight: 800;
+
+  font-weight: 900;
 
   transition:
     transform 0.3s ease,
@@ -378,38 +420,44 @@ nav {
       100deg,
       var(--blue-dark),
       var(--blue),
-      var(--blue-light)
+      var(--cyan)
     );
 
   box-shadow:
-    0 0 25px rgba(0, 130, 255, 0.25);
+    0 0 25px
+      rgba(0, 130, 255, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-4px);
 
   box-shadow:
-    0 0 40px rgba(0, 170, 255, 0.5);
+    0 0 45px
+      rgba(0, 170, 255, 0.5);
 }
 
 .btn-outline {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
   color: white;
 
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.02);
 }
 
 .btn-outline:hover {
-  border-color: var(--blue-light);
+  color: var(--cyan);
 
-  color: var(--blue-light);
+  border-color: var(--cyan);
 
   box-shadow:
-    0 0 25px rgba(0, 150, 255, 0.15);
+    0 0 25px
+      rgba(0, 150, 255, 0.15);
 
   transform: translateY(-3px);
 }
+
 
 /* =========================
    SECTIONS
@@ -430,10 +478,11 @@ section {
 }
 
 .section-title small {
-  color: var(--blue-light);
+  color: var(--cyan);
 
   font-size: 12px;
-  font-weight: 800;
+
+  font-weight: 900;
 
   letter-spacing: 4px;
 }
@@ -441,7 +490,8 @@ section {
 .section-title h2 {
   margin-top: 12px;
 
-  font-size: clamp(36px, 5vw, 60px);
+  font-size:
+    clamp(36px, 5vw, 60px);
 
   line-height: 1.05;
 
@@ -449,7 +499,7 @@ section {
 }
 
 .section-title p {
-  max-width: 680px;
+  max-width: 700px;
 
   margin: 18px auto 0;
 
@@ -458,8 +508,9 @@ section {
   line-height: 1.8;
 }
 
+
 /* =========================
-   SERVICE CARDS
+   SERVICE GRID
 ========================= */
 
 .services-grid {
@@ -471,12 +522,17 @@ section {
   gap: 18px;
 }
 
+
+/* =========================
+   GENERAL CARD
+========================= */
+
 .card {
   position: relative;
 
-  padding: 32px 28px;
-
   min-height: 250px;
+
+  padding: 32px 28px;
 
   overflow: hidden;
 
@@ -494,7 +550,8 @@ section {
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
 
 .card::before {
@@ -502,34 +559,47 @@ section {
 
   position: absolute;
 
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
 
-  right: -60px;
-  top: -60px;
+  right: -90px;
+  top: -90px;
 
   border-radius: 50%;
 
   background: var(--blue);
 
-  filter: blur(70px);
+  filter: blur(75px);
 
   opacity: 0;
 
-  transition: 0.35s ease;
+  transition: 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform:
+    translateY(-10px)
+    scale(1.015);
 
-  border-color: var(--border-hover);
+  border-color:
+    var(--border-hover);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(11, 30, 50, 0.98),
+      rgba(3, 9, 17, 0.98)
+    );
 
   box-shadow:
-    0 20px 55px rgba(0, 100, 255, 0.16);
+    0 20px 55px
+      rgba(0, 100, 255, 0.18),
+    0 0 35px
+      rgba(0, 150, 255, 0.08);
 }
 
 .card:hover::before {
-  opacity: 0.25;
+  opacity: 0.28;
 }
 
 .icon {
@@ -538,28 +608,201 @@ section {
   margin-bottom: 20px;
 
   position: relative;
+
   z-index: 2;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.card:hover .icon {
+  transform:
+    scale(1.12)
+    translateY(-3px);
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(0, 190, 255, 0.5)
+    );
 }
 
 .card h3 {
+  position: relative;
+
+  z-index: 2;
+
   font-size: 19px;
 
   margin-bottom: 12px;
-
-  position: relative;
-  z-index: 2;
 }
 
 .card p {
+  position: relative;
+
+  z-index: 2;
+
   color: var(--muted);
 
   font-size: 14px;
 
   line-height: 1.7;
-
-  position: relative;
-  z-index: 2;
 }
+
+.card small {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--cyan);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   PORTFOLIO — PREMIUM UPGRADE
+===================================================== */
+
+#portfolio {
+  position: relative;
+}
+
+#portfolio::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 20%;
+
+  transform:
+    translateX(-50%);
+
+  width: 650px;
+  height: 400px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0, 140, 255, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+#portfolio .card {
+  min-height: 315px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+}
+
+#portfolio .card::after {
+  content: "VIEW PROJECT";
+
+  position: absolute;
+
+  right: 24px;
+  bottom: 22px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  border: 1px solid
+    rgba(0, 200, 255, 0.28);
+
+  color: var(--cyan);
+
+  background:
+    rgba(0, 120, 255, 0.06);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  opacity: 0;
+
+  transform:
+    translateY(8px);
+
+  transition: 0.35s ease;
+}
+
+#portfolio .card:hover::after {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  box-shadow:
+    0 0 18px
+      rgba(0, 160, 255, 0.18);
+}
+
+#portfolio .card small {
+  margin-top: auto;
+
+  max-width: 70%;
+}
+
+#portfolio .icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 16px;
+
+  border: 1px solid
+    rgba(0, 180, 255, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 130, 255, 0.1),
+      rgba(0, 200, 255, 0.03)
+    );
+
+  box-shadow:
+    inset 0 0 20px
+      rgba(0, 140, 255, 0.04);
+}
+
+#portfolio .card:hover .icon {
+  border-color:
+    rgba(0, 200, 255, 0.6);
+
+  box-shadow:
+    0 0 25px
+      rgba(0, 150, 255, 0.16),
+    inset 0 0 20px
+      rgba(0, 150, 255, 0.08);
+}
+
 
 /* =========================
    ABOUT
@@ -577,7 +820,8 @@ section {
 }
 
 .about-text h2 {
-  font-size: clamp(40px, 5vw, 62px);
+  font-size:
+    clamp(40px, 5vw, 62px);
 
   line-height: 1;
 
@@ -587,7 +831,7 @@ section {
 }
 
 .about-text h2 span {
-  color: var(--blue-light);
+  color: var(--cyan);
 }
 
 .about-text p {
@@ -621,17 +865,20 @@ section {
 }
 
 .value:hover {
-  transform: translateY(-5px);
+  transform:
+    translateY(-5px);
 
-  border-color: var(--blue-light);
+  border-color:
+    var(--cyan);
 
-  box-shadow: var(--glow);
+  box-shadow:
+    var(--glow);
 }
 
 .value strong {
   display: block;
 
-  color: var(--blue-light);
+  color: var(--cyan);
 
   margin-bottom: 8px;
 
@@ -645,6 +892,7 @@ section {
 
   font-size: 13px;
 }
+
 
 /* =========================
    WHY N+
@@ -673,20 +921,25 @@ section {
       rgba(3, 8, 14, 0.9)
     );
 
-  transition: 0.3s ease;
+  transition:
+    0.35s ease;
 }
 
 .why-card:hover {
-  transform: translateY(-7px);
+  transform:
+    translateY(-7px);
 
-  border-color: var(--blue-light);
+  border-color:
+    var(--cyan);
 
   box-shadow:
-    0 15px 45px rgba(0, 120, 255, 0.15);
+    0 15px 45px
+      rgba(0, 120, 255, 0.15);
 }
 
 .why-card h3 {
-  margin: 15px 0 10px;
+  margin:
+    15px 0 10px;
 }
 
 .why-card p {
@@ -696,6 +949,7 @@ section {
 
   line-height: 1.7;
 }
+
 
 /* =========================
    PROCESS
@@ -722,7 +976,8 @@ section {
   width: 58px;
   height: 58px;
 
-  margin: auto auto 18px;
+  margin:
+    auto auto 18px;
 
   display: grid;
 
@@ -732,16 +987,32 @@ section {
 
   border: 1px solid var(--blue);
 
-  color: var(--blue-light);
+  color: var(--cyan);
 
   font-size: 13px;
 
   font-weight: 900;
 
   box-shadow:
-    0 0 25px rgba(0, 140, 255, 0.18);
+    0 0 25px
+      rgba(0, 140, 255, 0.18);
 
-  background: rgba(0, 110, 255, 0.04);
+  background:
+    rgba(0, 110, 255, 0.04);
+
+  transition: 0.3s ease;
+}
+
+.step:hover .number {
+  transform:
+    scale(1.1);
+
+  border-color:
+    var(--cyan);
+
+  box-shadow:
+    0 0 30px
+      rgba(0, 180, 255, 0.3);
 }
 
 .step h3 {
@@ -758,6 +1029,7 @@ section {
   line-height: 1.6;
 }
 
+
 /* =========================
    CTA
 ========================= */
@@ -765,9 +1037,11 @@ section {
 .cta {
   width: min(92%, 1100px);
 
-  margin: 70px auto;
+  margin:
+    70px auto;
 
-  padding: 90px 30px;
+  padding:
+    90px 30px;
 
   text-align: center;
 
@@ -784,11 +1058,45 @@ section {
     #050a11;
 
   box-shadow:
-    0 0 80px rgba(0, 110, 255, 0.12);
+    0 0 80px
+      rgba(0, 110, 255, 0.12);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 160, 255, 0.08);
+
+  filter: blur(50px);
+
+  pointer-events: none;
 }
 
 .cta h2 {
-  font-size: clamp(38px, 6vw, 68px);
+  position: relative;
+
+  z-index: 2;
+
+  font-size:
+    clamp(38px, 6vw, 68px);
 
   line-height: 1;
 
@@ -798,14 +1106,25 @@ section {
 }
 
 .cta h2 span {
-  color: var(--blue-light);
+  color: var(--cyan);
 }
 
 .cta p {
+  position: relative;
+
+  z-index: 2;
+
   color: var(--muted);
 
   margin-bottom: 32px;
 }
+
+.cta .btn {
+  position: relative;
+
+  z-index: 2;
+}
+
 
 /* =========================
    FOOTER
@@ -816,9 +1135,12 @@ footer {
 
   text-align: center;
 
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top:
+    1px solid
+    rgba(255,255,255,0.08);
 
-  background: #020407;
+  background:
+    #020407;
 }
 
 footer .logo {
@@ -854,14 +1176,16 @@ footer p {
 }
 
 .footer-links a:hover {
-  color: var(--blue-light);
+  color: var(--cyan);
 }
 
+
 /* =========================
-   ANIMATION
+   ANIMATIONS
 ========================= */
 
 @keyframes heroPulse {
+
   0% {
     transform: scale(0.95);
     opacity: 0.5;
@@ -876,7 +1200,9 @@ footer p {
     transform: scale(0.95);
     opacity: 0.5;
   }
+
 }
+
 
 /* =========================
    TABLET
@@ -894,7 +1220,8 @@ footer p {
   }
 
   .about-box {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .why-grid {
@@ -906,7 +1233,9 @@ footer p {
     grid-template-columns:
       repeat(3, 1fr);
   }
+
 }
+
 
 /* =========================
    MOBILE
@@ -915,7 +1244,8 @@ footer p {
 @media (max-width: 700px) {
 
   header {
-    background: rgba(2, 5, 9, 0.94);
+    background:
+      rgba(2, 5, 9, 0.95);
   }
 
   nav {
@@ -931,7 +1261,8 @@ footer p {
   }
 
   .nav-btn {
-    padding: 9px 14px;
+    padding:
+      9px 14px;
 
     font-size: 11px;
   }
@@ -940,9 +1271,7 @@ footer p {
     min-height: 92vh;
 
     padding:
-      120px
-      18px
-      70px;
+      120px 18px 70px;
   }
 
   .hero::before {
@@ -986,13 +1315,25 @@ footer p {
   .services-grid,
   .why-grid,
   .values {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .card {
     min-height: auto;
 
     padding: 27px;
+  }
+
+  #portfolio .card {
+    min-height: 285px;
+  }
+
+  #portfolio .card::after {
+    opacity: 1;
+
+    transform:
+      translateY(0);
   }
 
   .about-text h2 {
@@ -1007,9 +1348,11 @@ footer p {
   .cta {
     width: 92%;
 
-    padding: 65px 20px;
+    padding:
+      65px 20px;
 
-    margin: 40px auto;
+    margin:
+      40px auto;
   }
 
   .cta h2 {
@@ -1021,7 +1364,9 @@ footer p {
   .footer-links {
     gap: 14px;
   }
+
 }
+
 
 /* =========================
    SMALL MOBILE
@@ -1046,10 +1391,13 @@ footer p {
   }
 
   .process {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .values {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
+
 }
