@@ -1534,3 +1534,33 @@ footer p {
   }
 
 }
+/* ================================
+   PORTFOLIO BUTTON FIX
+================================ */
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-content {
+  position: relative;
+}
+
+.portfolio-button {
+  position: static !important;
+  display: inline-flex !important;
+  transform: none !important;
+  float: none !important;
+}
+
+.portfolio-card:hover .portfolio-button {
+  transform: none !important;
+}
+
+/* Remove any old positioned portfolio buttons */
+.portfolio-card .view-project,
+.portfolio-card .project-btn {
+  position: static !important;
+  transform: none !important;
+}
