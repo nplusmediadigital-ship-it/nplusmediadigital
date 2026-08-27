@@ -1560,3 +1560,274 @@ section,
 .portfolio-grid .portfolio-card:nth-child(8) {
     transition-delay: 0.56s;
 }
+
+/* =========================================================
+   PREMIUM CONTACT SECTION
+========================================================= */
+
+.contact-section {
+    padding: 120px 7%;
+    background: #050b12;
+}
+
+.contact-container {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+
+/* Contact Heading */
+
+.contact-heading small {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #00c8ff;
+}
+
+.contact-heading h2 {
+    margin: 0 0 24px;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 0.98;
+
+    font-weight: 900;
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+.contact-heading h2 span {
+    color: #00c8ff;
+}
+
+.contact-heading p {
+    max-width: 480px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* Contact Form */
+
+.contact-form {
+    padding: 38px;
+
+    border: 1px solid rgba(0, 200, 255, 0.16);
+    border-radius: 24px;
+
+    background: rgba(8, 18, 28, 0.72);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* Form Row */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* Form Group */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* Inputs */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Input */
+
+.form-group input,
+.form-group select {
+    height: 52px;
+
+    padding: 0 16px;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 145px;
+
+    padding: 16px;
+
+    resize: vertical;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+
+/* Select */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: rgba(0, 200, 255, 0.75);
+
+    background: rgba(0, 200, 255, 0.035);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 200, 255, 0.08);
+}
+
+
+/* Select options */
+
+.form-group select option {
+    background: #07121c;
+    color: #ffffff;
+}
+
+
+/* Submit Button */
+
+.form-submit {
+    width: 100%;
+
+    min-height: 54px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   CONTACT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .contact-heading p {
+        max-width: 650px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+    .contact-heading h2 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    .contact-heading p {
+        font-size: 14px;
+    }
+
+    .contact-form {
+        padding: 24px 18px;
+
+        border-radius: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 50px;
+    }
+
+    .form-group textarea {
+        min-height: 130px;
+    }
+}
