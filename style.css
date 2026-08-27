@@ -1484,3 +1484,79 @@ footer p {
         transform: translateY(-7px) rotate(-45deg);
     }
 }
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
+section,
+.cta,
+.portfolio-card,
+.why-card,
+.value,
+.step {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+/* Hero always visible */
+
+.hero,
+.hero-content {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* Stagger effect */
+
+.services-grid .card:nth-child(2),
+.portfolio-grid .portfolio-card:nth-child(2),
+.why-grid .why-card:nth-child(2) {
+    transition-delay: 0.08s;
+}
+
+.services-grid .card:nth-child(3),
+.portfolio-grid .portfolio-card:nth-child(3),
+.why-grid .why-card:nth-child(3) {
+    transition-delay: 0.16s;
+}
+
+.services-grid .card:nth-child(4),
+.portfolio-grid .portfolio-card:nth-child(4),
+.why-grid .why-card:nth-child(4) {
+    transition-delay: 0.24s;
+}
+
+.services-grid .card:nth-child(5),
+.portfolio-grid .portfolio-card:nth-child(5),
+.why-grid .why-card:nth-child(5) {
+    transition-delay: 0.32s;
+}
+
+.services-grid .card:nth-child(6),
+.portfolio-grid .portfolio-card:nth-child(6),
+.why-grid .why-card:nth-child(6) {
+    transition-delay: 0.40s;
+}
+
+.services-grid .card:nth-child(7),
+.portfolio-grid .portfolio-card:nth-child(7),
+.why-grid .why-card:nth-child(7) {
+    transition-delay: 0.48s;
+}
+
+.services-grid .card:nth-child(8),
+.portfolio-grid .portfolio-card:nth-child(8) {
+    transition-delay: 0.56s;
+}
