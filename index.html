@@ -1254,14 +1254,20 @@
         </section>
 
 
-        <!-- =================================================
-             CTA
-        ================================================== -->
 
-        <div
-            class="cta"
-            id="contact"
-        >
+        <!-- =================================================
+     CONTACT / PROJECT ENQUIRY
+================================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-container">
+
+        <div class="contact-heading">
+
+            <small>
+                START A PROJECT
+            </small>
 
             <h2>
                 LET'S BUILD
@@ -1269,21 +1275,178 @@
                 <span>SOMETHING GREAT.</span>
             </h2>
 
-
             <p>
-                Have an idea? Let's turn it into a digital solution.
+                Tell us about your project. Our team will
+                get back to you and discuss the right
+                digital solution for your business.
             </p>
-
-
-            <a
-                href="mailto:hello@nplusmediadigital.com"
-                class="btn btn-primary"
-            >
-                START YOUR PROJECT →
-            </a>
 
         </div>
 
+
+        <form class="contact-form" id="projectForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="company">
+                        COMPANY / BUSINESS
+                    </label>
+
+                    <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Your company name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        EMAIL ADDRESS
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        WHATSAPP NUMBER
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="service">
+                    SERVICE REQUIRED
+                </label>
+
+                <select
+                    id="service"
+                    name="service"
+                    required
+                >
+
+                    <option value="" selected disabled>
+                        Select a service
+                    </option>
+
+                    <option value="Website Development">
+                        Website Development
+                    </option>
+
+                    <option value="App Development">
+                        App Development
+                    </option>
+
+                    <option value="AI Automation">
+                        AI Automation
+                    </option>
+
+                    <option value="Digital Marketing">
+                        Digital Marketing
+                    </option>
+
+                    <option value="UI/UX Design">
+                        UI/UX Design
+                    </option>
+
+                    <option value="Video Production">
+                        Video Production
+                    </option>
+
+                    <option value="Social Media Marketing">
+                        Social Media Marketing
+                    </option>
+
+                    <option value="Paid Advertising">
+                        Paid Advertising
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    PROJECT DETAILS
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Tell us about your project..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary form-submit"
+            >
+                SEND ENQUIRY →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
     </main>
 
