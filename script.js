@@ -88,3 +88,50 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     });
 
 });
+
+// ================================
+// CONTACT FORM
+// ================================
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = document.querySelector("#name").value.trim();
+        const company = document.querySelector("#company").value.trim();
+        const email = document.querySelector("#email").value.trim();
+        const whatsapp = document.querySelector("#whatsapp").value.trim();
+        const service = document.querySelector("#service").value;
+        const details = document.querySelector("#details").value.trim();
+
+        if (!name || !email || !service || !details) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        const message =
+            "N+ MEDIA & DIGITAL - NEW ENQUIRY\n\n" +
+            "Name: " + name + "\n" +
+            "Company / Business: " + company + "\n" +
+            "Email: " + email + "\n" +
+            "WhatsApp: " + whatsapp + "\n" +
+            "Service: " + service + "\n\n" +
+            "Project Details:\n" + details;
+
+        const whatsappNumber = "918072441662";
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+}
