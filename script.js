@@ -339,22 +339,17 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    // ======================================================
-    // CONTACT FORM → WHATSAPP
+        // ======================================================
+    // CONTACT FORM → FORMSPREE + WHATSAPP
     // ======================================================
 
     if (contactForm) {
 
         contactForm.addEventListener(
             "submit",
-            function (event) {
+            async function (event) {
 
                 event.preventDefault();
-
-
-                // ==================================================
-                // FORM FIELDS
-                // ==================================================
 
                 const nameField =
                     document.querySelector("#name");
@@ -374,10 +369,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const detailsField =
                     document.querySelector("#details");
 
-
-                // ==================================================
-                // GET VALUES
-                // ==================================================
 
                 const name =
                     nameField
@@ -411,37 +402,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 // ==================================================
-                // NAME VALIDATION
+                // VALIDATION
                 // ==================================================
 
                 if (!name) {
-
-                    alert(
-                        "Please enter your name."
-                    );
-
-                    if (nameField) {
-                        nameField.focus();
-                    }
-
+                    alert("Please enter your name.");
+                    if (nameField) nameField.focus();
                     return;
                 }
 
 
-                // ==================================================
-                // EMAIL VALIDATION
-                // ==================================================
-
                 if (!email) {
-
-                    alert(
-                        "Please enter your email address."
-                    );
-
-                    if (emailField) {
-                        emailField.focus();
-                    }
-
+                    alert("Please enter your email address.");
+                    if (emailField) emailField.focus();
                     return;
                 }
 
@@ -449,37 +422,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 const emailPattern =
                     /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-
-                if (
-                    !emailPattern.test(email)
-                ) {
-
-                    alert(
-                        "Please enter a valid email address."
-                    );
-
-                    if (emailField) {
-                        emailField.focus();
-                    }
-
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    if (emailField) emailField.focus();
                     return;
                 }
 
 
-                // ==================================================
-                // WHATSAPP VALIDATION
-                // ==================================================
-
                 if (!whatsapp) {
-
-                    alert(
-                        "Please enter your WhatsApp number."
-                    );
-
-                    if (whatsappField) {
-                        whatsappField.focus();
-                    }
-
+                    alert("Please enter your WhatsApp number.");
+                    if (whatsappField) whatsappField.focus();
                     return;
                 }
 
@@ -487,128 +439,133 @@ document.addEventListener("DOMContentLoaded", function () {
                 const whatsappDigits =
                     whatsapp.replace(/\D/g, "");
 
-
-                if (
-                    whatsappDigits.length < 10
-                ) {
-
-                    alert(
-                        "Please enter a valid WhatsApp number."
-                    );
-
-                    if (whatsappField) {
-                        whatsappField.focus();
-                    }
-
+                if (whatsappDigits.length < 10) {
+                    alert("Please enter a valid WhatsApp number.");
+                    if (whatsappField) whatsappField.focus();
                     return;
                 }
 
-
-                // ==================================================
-                // SERVICE VALIDATION
-                // ==================================================
 
                 if (!service) {
-
-                    alert(
-                        "Please select a service."
-                    );
-
-                    if (serviceField) {
-                        serviceField.focus();
-                    }
-
+                    alert("Please select a service.");
+                    if (serviceField) serviceField.focus();
                     return;
                 }
 
-
-                // ==================================================
-                // PROJECT DETAILS VALIDATION
-                // ==================================================
 
                 if (!details) {
-
-                    alert(
-                        "Please enter your project details."
-                    );
-
-                    if (detailsField) {
-                        detailsField.focus();
-                    }
-
+                    alert("Please enter your project details.");
+                    if (detailsField) detailsField.focus();
                     return;
                 }
 
 
                 // ==================================================
-                // CREATE WHATSAPP MESSAGE
+                // SEND TO FORMSPREE
                 // ==================================================
 
-                const message =
-                    "N+ MEDIA & DIGITAL - NEW ENQUIRY\n" +
-                    "================================\n\n" +
+                const formData =
+                    new FormData(contactForm);
 
-                    "Name: " +
-                    name +
-                    "\n" +
+                try {
 
-                    "Company / Business: " +
-                    (
-                        company ||
-                        "Not provided"
-                    ) +
-                    "\n" +
-
-                    "Email: " +
-                    email +
-                    "\n" +
-
-                    "WhatsApp: " +
-                    whatsapp +
-                    "\n" +
-
-                    "Service Required: " +
-                    service +
-                    "\n\n" +
-
-                    "Project Details:\n" +
-                    details +
-                    "\n\n" +
-
-                    "================================\n" +
-                    "Sent from N+ Media & Digital Website";
+                    const response =
+                        await fetch(
+                            "https://formspree.io/f/xkjnnzra",
+                            {
+                                method: "POST",
+                                body: formData,
+                                headers: {
+                                    "Accept": "application/json"
+                                }
+                            }
+                        );
 
 
-                // ==================================================
-                // CREATE WHATSAPP URL
-                // ==================================================
-
-                const whatsappURL =
-                    "https://wa.me/" +
-                    BUSINESS_WHATSAPP +
-                    "?text=" +
-                    encodeURIComponent(message);
+                    if (!response.ok) {
+                        throw new Error(
+                            "Form submission failed."
+                        );
+                    }
 
 
-                // ==================================================
-                // OPEN WHATSAPP
-                // ==================================================
+                    // ==================================================
+                    // WHATSAPP MESSAGE
+                    // ==================================================
 
-                const newWindow =
-                    window.open(
-                        whatsappURL,
-                        "_blank"
+                    const message =
+                        "N+ MEDIA & DIGITAL - NEW ENQUIRY\n" +
+                        "================================\n\n" +
+
+                        "Name: " +
+                        name +
+                        "\n" +
+
+                        "Company / Business: " +
+                        (
+                            company ||
+                            "Not provided"
+                        ) +
+                        "\n" +
+
+                        "Email: " +
+                        email +
+                        "\n" +
+
+                        "WhatsApp: " +
+                        whatsapp +
+                        "\n" +
+
+                        "Service Required: " +
+                        service +
+                        "\n\n" +
+
+                        "Project Details:\n" +
+                        details +
+                        "\n\n" +
+
+                        "================================\n" +
+                        "Sent from N+ Media & Digital Website";
+
+
+                    const whatsappURL =
+                        "https://wa.me/" +
+                        BUSINESS_WHATSAPP +
+                        "?text=" +
+                        encodeURIComponent(message);
+
+
+                    alert(
+                        "Thank you! Your enquiry has been sent successfully."
                     );
 
 
-                // ==================================================
-                // FALLBACK
-                // ==================================================
+                    contactForm.reset();
 
-                if (!newWindow) {
 
-                    window.location.href =
-                        whatsappURL;
+                    const newWindow =
+                        window.open(
+                            whatsappURL,
+                            "_blank"
+                        );
+
+
+                    if (!newWindow) {
+                        window.location.href =
+                            whatsappURL;
+                    }
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Form submission error:",
+                        error
+                    );
+
+                    alert(
+                        "Sorry, your enquiry could not be sent. Please try again."
+                    );
 
                 }
 
@@ -616,7 +573,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
     // ======================================================
     // FLOATING WHATSAPP BUTTON
