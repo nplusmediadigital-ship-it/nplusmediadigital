@@ -120,8 +120,10 @@ if (contactForm) {
             "Email: " + email + "\n" +
             "WhatsApp: " + whatsapp + "\n" +
             "Service: " + service + "\n\n" +
-            "Project Details:\n" + details;
+            "Project Details:\n" +
+            details;
 
+        // YOUR BUSINESS WHATSAPP NUMBER
         const whatsappNumber = "918072441662";
 
         const whatsappURL =
@@ -131,7 +133,5 @@ if (contactForm) {
             encodeURIComponent(message);
 
         window.open(whatsappURL, "_blank");
-
     });
-
 }
