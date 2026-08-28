@@ -1,71 +1,72 @@
-// ========================================
-// N+ MEDIA & DIGITAL - MAIN SCRIPT
-// ========================================
+// ================================
+// N+ MEDIA & DIGITAL
+// MAIN JAVASCRIPT
+// ================================
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================
-    // MOBILE MENU
-    // ========================================
+// ================================
+// MOBILE MENU
+// ================================
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-    if (menuToggle && navLinks) {
+if (menuToggle && navLinks) {
 
-        menuToggle.addEventListener("click", function () {
+    menuToggle.addEventListener("click", function () {
 
-            menuToggle.classList.toggle("active");
-            navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
 
-            const isOpen = menuToggle.classList.contains("active");
+        const isOpen = menuToggle.classList.contains("active");
 
-            menuToggle.setAttribute("aria-expanded", isOpen);
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close menu" : "Open menu"
-            );
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+
+    });
+
+
+    // Close menu after clicking any navigation link
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            menuToggle.classList.remove("active");
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open menu");
 
         });
 
-        document.querySelectorAll(".nav-links a").forEach(function (link) {
+    });
 
-            link.addEventListener("click", function () {
-
-                menuToggle.classList.remove("active");
-                navLinks.classList.remove("active");
-
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open menu");
-
-            });
-
-        });
-
-    }
+}
 
 
-    // ========================================
-    // SMOOTH SCROLL
-    // ========================================
+// ================================
+// GET A QUOTE BUTTON
+// ================================
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+document.querySelectorAll("a, button").forEach(function (element) {
 
-        link.addEventListener("click", function (event) {
+    const text = element.textContent.trim().toUpperCase();
 
-            const targetId = this.getAttribute("href");
+    if (text.includes("GET A QUOTE")) {
 
-            if (!targetId || targetId === "#") {
-                return;
-            }
+        element.addEventListener("click", function (event) {
 
-            const target = document.querySelector(targetId);
+            const contactSection = document.querySelector("#contact");
 
-            if (target) {
+            if (contactSection) {
 
                 event.preventDefault();
 
-                target.scrollIntoView({
+                contactSection.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
@@ -74,176 +75,286 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-    });
+    }
+
+});
 
 
-    // ========================================
-    // GET A QUOTE
-    // ========================================
+// ================================
+// SMOOTH SCROLL
+// ================================
 
-    document.querySelectorAll("a, button").forEach(function (element) {
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-        const text = element.textContent.trim().toUpperCase();
+    link.addEventListener("click", function (event) {
 
-        if (text.includes("GET A QUOTE")) {
+        const targetId = this.getAttribute("href");
 
-            element.addEventListener("click", function (event) {
+        if (!targetId || targetId === "#") {
+            return;
+        }
 
-                const contactSection =
-                    document.querySelector("#contact");
+        const target = document.querySelector(targetId);
 
-                if (contactSection) {
+        if (target) {
 
-                    event.preventDefault();
+            event.preventDefault();
 
-                    contactSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
-
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
         }
 
     });
 
-
-    // ========================================
-    // CONTACT FORM → WHATSAPP
-    // ========================================
-
-    const contactForm = document.querySelector("form");
-
-    if (contactForm) {
-
-        contactForm.addEventListener("submit", function (event) {
-
-            // STOP NORMAL FORM SUBMISSION
-            event.preventDefault();
-            event.stopPropagation();
-
-            // GET FORM VALUES
-            const nameField =
-                document.querySelector("#name");
-
-            const companyField =
-                document.querySelector("#company");
-
-            const emailField =
-                document.querySelector("#email");
-
-            const whatsappField =
-                document.querySelector("#whatsapp");
-
-            const serviceField =
-                document.querySelector("#service");
-
-            const detailsField =
-                document.querySelector("#details");
+});
 
 
-            const name =
-                nameField ? nameField.value.trim() : "";
+// ================================
+// CONTACT FORM → WHATSAPP
+// ================================
 
-            const company =
-                companyField ? companyField.value.trim() : "";
+const contactForm = document.querySelector(".contact-form");
 
-            const email =
-                emailField ? emailField.value.trim() : "";
+if (contactForm) {
 
-            const whatsapp =
-                whatsappField ? whatsappField.value.trim() : "";
+    contactForm.addEventListener("submit", function (event) {
 
-            const service =
-                serviceField ? serviceField.value.trim() : "";
-
-            const details =
-                detailsField ? detailsField.value.trim() : "";
+        event.preventDefault();
 
 
-            // ========================================
-            // VALIDATION
-            // ========================================
+        // ================================
+        // GET FORM VALUES
+        // ================================
 
-            if (!name) {
-                alert("Please enter your name.");
-                return;
-            }
-
-            if (!email) {
-                alert("Please enter your email address.");
-                return;
-            }
-
-            if (!service) {
-                alert("Please select a service.");
-                return;
-            }
-
-            if (!details) {
-                alert("Please enter your project details.");
-                return;
-            }
+        const nameField = document.querySelector("#name");
+        const companyField = document.querySelector("#company");
+        const emailField = document.querySelector("#email");
+        const whatsappField = document.querySelector("#whatsapp");
+        const serviceField = document.querySelector("#service");
+        const detailsField = document.querySelector("#details");
 
 
-            // ========================================
-            // WHATSAPP MESSAGE
-            // ========================================
-
-            const message =
-                "N+ MEDIA & DIGITAL - NEW ENQUIRY\n\n" +
-
-                "Name: " + name + "\n" +
-
-                "Company / Business: " +
-                (company || "Not provided") +
-                "\n" +
-
-                "Email: " + email + "\n" +
-
-                "WhatsApp: " +
-                (whatsapp || "Not provided") +
-                "\n" +
-
-                "Service: " + service +
-                "\n\n" +
-
-                "Project Details:\n" +
-                details;
+        const name = nameField ? nameField.value.trim() : "";
+        const company = companyField ? companyField.value.trim() : "";
+        const email = emailField ? emailField.value.trim() : "";
+        const whatsapp = whatsappField ? whatsappField.value.trim() : "";
+        const service = serviceField ? serviceField.value.trim() : "";
+        const details = detailsField ? detailsField.value.trim() : "";
 
 
-            // ========================================
-            // N+ BUSINESS WHATSAPP NUMBER
-            // ========================================
+        // ================================
+        // REQUIRED FIELD VALIDATION
+        // ================================
 
-            const whatsappNumber = "918072441662";
+        if (!name) {
 
+            alert("Please enter your name.");
+            if (nameField) nameField.focus();
+            return;
 
-            // ========================================
-            // CREATE WHATSAPP URL
-            // ========================================
-
-            const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                encodeURIComponent(message);
+        }
 
 
-            // ========================================
-            // OPEN WHATSAPP
-            // ========================================
+        if (!email) {
 
-            window.open(
-                whatsappURL,
-                "_blank",
-                "noopener,noreferrer"
+            alert("Please enter your email address.");
+            if (emailField) emailField.focus();
+            return;
+
+        }
+
+
+        // Basic email validation
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            alert("Please enter a valid email address.");
+            if (emailField) emailField.focus();
+            return;
+
+        }
+
+
+        if (!service || service === "Select a service") {
+
+            alert("Please select a service.");
+            if (serviceField) serviceField.focus();
+            return;
+
+        }
+
+
+        if (!details) {
+
+            alert("Please enter your project details.");
+            if (detailsField) detailsField.focus();
+            return;
+
+        }
+
+
+        // ================================
+        // WHATSAPP MESSAGE
+        // ================================
+
+        const message =
+            "N+ MEDIA & DIGITAL - NEW ENQUIRY\n" +
+            "================================\n\n" +
+
+            "Name: " + name + "\n" +
+
+            "Company / Business: " +
+            (company || "Not provided") + "\n" +
+
+            "Email: " + email + "\n" +
+
+            "WhatsApp: " +
+            (whatsapp || "Not provided") + "\n" +
+
+            "Service Required: " + service + "\n\n" +
+
+            "Project Details:\n" +
+            details + "\n\n" +
+
+            "================================\n" +
+            "Sent from N+ Media & Digital Website";
+
+
+        // ================================
+        // YOUR BUSINESS WHATSAPP NUMBER
+        // ================================
+
+        const whatsappNumber = "918072441662";
+
+
+        // ================================
+        // CREATE WHATSAPP URL
+        // ================================
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        // ================================
+        // OPEN WHATSAPP
+        // ================================
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    });
+
+}
+
+
+// ================================
+// FLOATING WHATSAPP BUTTON
+// ================================
+
+const whatsappButtons =
+    document.querySelectorAll(".whatsapp-button");
+
+
+whatsappButtons.forEach(function (button) {
+
+    button.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+
+        const message =
+            "Hi N+ Media & Digital! 👋\n\n" +
+            "I would like to know more about your digital services.";
+
+
+        const whatsappNumber = "918072441662";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    });
+
+});
+
+
+// ================================
+// PORTFOLIO / GENERAL WHATSAPP LINKS
+// ================================
+
+document.querySelectorAll(
+    'a[href*="wa.me"], a[href*="whatsapp"]'
+).forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        // Allow normal WhatsApp links to work naturally.
+
+    });
+
+});
+
+
+// ================================
+// ESCAPE KEY — CLOSE MOBILE MENU
+// ================================
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.classList.remove("active");
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
-        });
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+
+        }
 
     }
+
+});
+
+
+// ================================
+// PAGE LOADED
+// ================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log(
+        "N+ Media & Digital website loaded successfully."
+    );
 
 });
