@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -18,22 +19,37 @@
         content="N+ Media & Digital builds modern websites, apps, AI automation, UI/UX and digital solutions for growing businesses."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="theme-color"
+        content="#03080d"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
 
 
 <body>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
 
 <header>
 
     <nav>
 
-        <a href="#home" class="logo">
-            N+ <span>MEDIA & DIGITAL</span>
+        <a
+            href="#home"
+            class="logo"
+            aria-label="N+ Media & Digital Home"
+        >
+            N+
+            <span>MEDIA & DIGITAL</span>
         </a>
 
 
@@ -63,14 +79,20 @@
                 <a href="#process">Process</a>
             </li>
 
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
 
 
+        <!-- MOBILE MENU -->
+
         <button
             class="menu-toggle"
+            type="button"
             aria-label="Open menu"
             aria-expanded="false"
-            type="button"
         >
             <span></span>
             <span></span>
@@ -78,7 +100,12 @@
         </button>
 
 
-        <a href="#contact" class="nav-btn">
+        <!-- DESKTOP QUOTE BUTTON -->
+
+        <a
+            href="#contact"
+            class="nav-btn"
+        >
             GET A QUOTE
         </a>
 
@@ -87,18 +114,19 @@
 </header>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      MAIN
-===================================================== -->
+========================================================= -->
 
 <main id="home">
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
-<div class="hero">
+<section class="hero">
 
     <div class="hero-content">
 
@@ -108,17 +136,26 @@
 
 
         <h1>
+
             DIGITAL SOLUTIONS
+
             <br>
+
             THAT DRIVE
-            <span>REAL GROWTH.</span>
+
+            <span>
+                REAL GROWTH.
+            </span>
+
         </h1>
 
 
         <p>
+
             We build modern websites, apps, AI automation
             and digital experiences that help businesses
             grow, scale and stand out.
+
         </p>
 
 
@@ -143,12 +180,13 @@
 
     </div>
 
-</div>
+</section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SERVICES
-===================================================== -->
+========================================================= -->
 
 <section id="services">
 
@@ -158,9 +196,11 @@
             WHAT WE DO
         </small>
 
+
         <h2>
             Our Services
         </h2>
+
 
         <p>
             Modern digital solutions designed to help
@@ -169,6 +209,7 @@
         </p>
 
     </div>
+
 
 
     <div class="services-grid">
@@ -183,7 +224,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <rect
                         x="3"
                         y="4"
@@ -193,7 +236,9 @@
                     ></rect>
 
                     <path d="M3 8h18"></path>
+
                     <path d="M7 12h4"></path>
+
                     <path d="M7 15h8"></path>
 
                 </svg>
@@ -204,6 +249,7 @@
             <h3>
                 Website Development
             </h3>
+
 
             <p>
                 Modern, responsive and high-performance
@@ -223,7 +269,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <rect
                         x="7"
                         y="2.5"
@@ -233,6 +281,7 @@
                     ></rect>
 
                     <path d="M10 5h4"></path>
+
                     <path d="M11 18.5h2"></path>
 
                 </svg>
@@ -243,6 +292,7 @@
             <h3>
                 App Development
             </h3>
+
 
             <p>
                 Custom mobile applications built around
@@ -262,7 +312,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <circle
                         cx="12"
                         cy="12"
@@ -270,12 +322,19 @@
                     ></circle>
 
                     <path d="M12 2v3"></path>
+
                     <path d="M12 19v3"></path>
+
                     <path d="M2 12h3"></path>
+
                     <path d="M19 12h3"></path>
+
                     <path d="M5 5l2 2"></path>
+
                     <path d="M17 17l2 2"></path>
+
                     <path d="M19 5l-2 2"></path>
+
                     <path d="M7 17l-2 2"></path>
 
                 </svg>
@@ -286,6 +345,7 @@
             <h3>
                 AI Automation
             </h3>
+
 
             <p>
                 Smart workflows that reduce repetitive work,
@@ -305,9 +365,13 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M4 19V5"></path>
+
                     <path d="M4 19h16"></path>
+
                     <path d="M7 15l4-5 3 3 5-7"></path>
 
                 </svg>
@@ -318,6 +382,7 @@
             <h3>
                 Digital Marketing
             </h3>
+
 
             <p>
                 Data-driven strategies designed to increase
@@ -337,7 +402,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <rect
                         x="4"
                         y="4"
@@ -347,7 +414,9 @@
                     ></rect>
 
                     <path d="M8 8h8"></path>
+
                     <path d="M8 12h5"></path>
+
                     <path d="M8 16h7"></path>
 
                 </svg>
@@ -358,6 +427,7 @@
             <h3>
                 UI/UX Design
             </h3>
+
 
             <p>
                 Intuitive interfaces and user experiences
@@ -377,7 +447,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <rect
                         x="3"
                         y="6"
@@ -397,6 +469,7 @@
                 Video Production
             </h3>
 
+
             <p>
                 Creative visual content that communicates
                 your brand story and captures attention.
@@ -415,7 +488,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <circle
                         cx="7"
                         cy="7"
@@ -429,7 +504,9 @@
                     ></circle>
 
                     <path d="M9.5 9.5l5 5"></path>
+
                     <path d="M17 7h4"></path>
+
                     <path d="M7 17H3"></path>
 
                 </svg>
@@ -440,6 +517,7 @@
             <h3>
                 Social Media Marketing
             </h3>
+
 
             <p>
                 Strategic content and campaigns that build
@@ -459,7 +537,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <circle
                         cx="12"
                         cy="12"
@@ -483,6 +563,7 @@
                 Paid Advertising
             </h3>
 
+
             <p>
                 Targeted advertising campaigns focused on
                 qualified traffic, leads and conversions.
@@ -497,9 +578,9 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-===================================================== -->
+========================================================= -->
 
 <section id="about">
 
@@ -514,11 +595,19 @@
 
 
             <h2>
+
                 Technology.
+
                 <br>
+
                 Creativity.
+
                 <br>
-                <span>Growth.</span>
+
+                <span>
+                    Growth.
+                </span>
+
             </h2>
 
 
@@ -602,9 +691,9 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      PORTFOLIO
-===================================================== -->
+========================================================= -->
 
 <section id="portfolio">
 
@@ -614,9 +703,11 @@
             SELECTED WORK
         </small>
 
+
         <h2>
             Our Portfolio
         </h2>
+
 
         <p>
             A showcase of digital concepts, creative
@@ -624,6 +715,7 @@
         </p>
 
     </div>
+
 
 
     <div class="portfolio-grid">
@@ -637,6 +729,7 @@
                 src="premium-business-website.png"
                 alt="Premium Business Website"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -646,14 +739,17 @@
                     Premium Business Website
                 </h3>
 
+
                 <p>
                     A modern high-performance website concept
                     focused on brand credibility and conversions.
                 </p>
 
+
                 <span class="portfolio-category">
                     WEBSITE DEVELOPMENT • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -676,6 +772,7 @@
                 src="modern-uiux-experience.png"
                 alt="Modern UI UX Experience"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -685,14 +782,17 @@
                     Modern UI/UX Experience
                 </h3>
 
+
                 <p>
                     Clean interface design created to deliver
                     a smooth and engaging digital experience.
                 </p>
 
+
                 <span class="portfolio-category">
                     UI/UX DESIGN • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -715,6 +815,7 @@
                 src="mobile-app-concept.png"
                 alt="Mobile App Concept"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -724,14 +825,17 @@
                     Mobile App Concept
                 </h3>
 
+
                 <p>
                     A scalable mobile application concept built
                     around usability, simplicity and performance.
                 </p>
 
+
                 <span class="portfolio-category">
                     APP DEVELOPMENT • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -754,6 +858,7 @@
                 src="social-media-campaign.png"
                 alt="Social Media Campaign"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -763,14 +868,17 @@
                     Social Media Campaign
                 </h3>
 
+
                 <p>
                     Creative social media content designed to
                     strengthen brand identity and engagement.
                 </p>
 
+
                 <span class="portfolio-category">
                     SOCIAL MEDIA • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -793,6 +901,7 @@
                 src="digital-growth-campaign.png"
                 alt="Digital Growth Campaign"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -802,14 +911,17 @@
                     Digital Growth Campaign
                 </h3>
 
+
                 <p>
                     Data-driven digital strategy focused on
                     visibility, engagement and measurable growth.
                 </p>
 
+
                 <span class="portfolio-category">
                     DIGITAL MARKETING • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -832,6 +944,7 @@
                 src="creative-video-campaign.png"
                 alt="Creative Video Campaign"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -841,14 +954,17 @@
                     Creative Video Campaign
                 </h3>
 
+
                 <p>
                     High-impact visual content designed to
                     communicate stories and strengthen brands.
                 </p>
 
+
                 <span class="portfolio-category">
                     VIDEO PRODUCTION • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -871,6 +987,7 @@
                 src="ai-automation-system.png"
                 alt="AI Automation System"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -880,14 +997,17 @@
                     AI Automation System
                 </h3>
 
+
                 <p>
                     Intelligent workflow automation designed to
                     reduce repetitive tasks and improve efficiency.
                 </p>
 
+
                 <span class="portfolio-category">
                     AI AUTOMATION • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -910,6 +1030,7 @@
                 src="paid-advertising-campaign.png"
                 alt="Paid Advertising Campaign"
                 class="portfolio-image"
+                loading="lazy"
             >
 
 
@@ -919,14 +1040,17 @@
                     Paid Advertising Campaign
                 </h3>
 
+
                 <p>
                     Performance-focused advertising concepts
                     built around traffic, leads and conversions.
                 </p>
 
+
                 <span class="portfolio-category">
                     PAID ADVERTISING • CONCEPT PROJECT
                 </span>
+
 
                 <a
                     href="#contact"
@@ -946,9 +1070,9 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      WHY N+
-===================================================== -->
+========================================================= -->
 
 <section id="why">
 
@@ -958,9 +1082,11 @@
             WHY N+
         </small>
 
+
         <h2>
             More Than A Service.
         </h2>
+
 
         <p>
             We aim to become a technology partner that
@@ -970,8 +1096,11 @@
     </div>
 
 
+
     <div class="why-grid">
 
+
+        <!-- WHY 01 -->
 
         <div class="why-card">
 
@@ -980,18 +1109,26 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M12 3v18"></path>
+
                     <path d="M3 12h18"></path>
+
                     <path d="M5 5l14 14"></path>
+
                     <path d="M19 5L5 19"></path>
+
                 </svg>
 
             </div>
 
+
             <h3>
                 Innovation
             </h3>
+
 
             <p>
                 Modern ideas and technologies designed
@@ -1002,6 +1139,8 @@
 
 
 
+        <!-- WHY 02 -->
+
         <div class="why-card">
 
             <div class="icon">
@@ -1009,16 +1148,22 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"></path>
+
                     <path d="M9 12l2 2 4-4"></path>
+
                 </svg>
 
             </div>
 
+
             <h3>
                 Quality
             </h3>
+
 
             <p>
                 Attention to detail with quality at
@@ -1029,6 +1174,8 @@
 
 
 
+        <!-- WHY 03 -->
+
         <div class="why-card">
 
             <div class="icon">
@@ -1036,15 +1183,20 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M13 2L5 13h6l-1 9 8-11h-6z"></path>
+
                 </svg>
 
             </div>
 
+
             <h3>
                 Speed
             </h3>
+
 
             <p>
                 Efficient project execution without
@@ -1055,6 +1207,8 @@
 
 
 
+        <!-- WHY 04 -->
+
         <div class="why-card">
 
             <div class="icon">
@@ -1062,7 +1216,9 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <circle
                         cx="12"
                         cy="12"
@@ -1081,9 +1237,11 @@
 
             </div>
 
+
             <h3>
                 Results Driven
             </h3>
+
 
             <p>
                 Solutions designed around meaningful
@@ -1094,6 +1252,8 @@
 
 
 
+        <!-- WHY 05 -->
+
         <div class="why-card">
 
             <div class="icon">
@@ -1101,16 +1261,22 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M8 11l-2-2a2 2 0 0 0-3 3l4 4a4 4 0 0 0 6 0l2-2"></path>
+
                     <path d="M16 13l2 2a2 2 0 0 0 3-3l-4-4a4 4 0 0 0-6 0l-2 2"></path>
+
                 </svg>
 
             </div>
 
+
             <h3>
                 Client First
             </h3>
+
 
             <p>
                 Your goals and requirements guide
@@ -1121,6 +1287,8 @@
 
 
 
+        <!-- WHY 06 -->
+
         <div class="why-card">
 
             <div class="icon">
@@ -1128,17 +1296,24 @@
                 <svg
                     class="digital-icon"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                 >
+
                     <path d="M4 19V5"></path>
+
                     <path d="M4 19h16"></path>
+
                     <path d="M7 15l4-5 3 3 5-7"></path>
+
                 </svg>
 
             </div>
 
+
             <h3>
                 Growth Focused
             </h3>
+
 
             <p>
                 Digital solutions built to support
@@ -1154,9 +1329,9 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      PROCESS
-===================================================== -->
+========================================================= -->
 
 <section id="process">
 
@@ -1166,9 +1341,11 @@
             OUR PROCESS
         </small>
 
+
         <h2>
             From Idea To Impact
         </h2>
+
 
         <p>
             A simple, transparent and effective process.
@@ -1177,8 +1354,17 @@
     </div>
 
 
+
+    <!-- IMPORTANT:
+         ACTUAL PROCESS STRUCTURE
+         .process
+         .step
+    -->
+
     <div class="process">
 
+
+        <!-- STEP 01 -->
 
         <div class="step">
 
@@ -1186,9 +1372,11 @@
                 01
             </div>
 
+
             <h3>
                 DISCOVER
             </h3>
+
 
             <p>
                 Understand your goals and requirements.
@@ -1198,15 +1386,19 @@
 
 
 
+        <!-- STEP 02 -->
+
         <div class="step">
 
             <div class="number">
                 02
             </div>
 
+
             <h3>
                 PLAN
             </h3>
+
 
             <p>
                 Create the strategy and roadmap.
@@ -1216,15 +1408,19 @@
 
 
 
+        <!-- STEP 03 -->
+
         <div class="step">
 
             <div class="number">
                 03
             </div>
 
+
             <h3>
                 DESIGN
             </h3>
+
 
             <p>
                 Create intuitive digital experiences.
@@ -1234,15 +1430,19 @@
 
 
 
+        <!-- STEP 04 -->
+
         <div class="step">
 
             <div class="number">
                 04
             </div>
 
+
             <h3>
                 BUILD
             </h3>
+
 
             <p>
                 Develop with modern technology.
@@ -1252,15 +1452,19 @@
 
 
 
+        <!-- STEP 05 -->
+
         <div class="step">
 
             <div class="number">
                 05
             </div>
 
+
             <h3>
                 LAUNCH
             </h3>
+
 
             <p>
                 Test, optimize and launch.
@@ -1270,15 +1474,19 @@
 
 
 
+        <!-- STEP 06 -->
+
         <div class="step">
 
             <div class="number">
                 06
             </div>
 
+
             <h3>
                 GROW
             </h3>
+
 
             <p>
                 Support and improve continuously.
@@ -1293,9 +1501,9 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      CONTACT / PROJECT ENQUIRY
-===================================================== -->
+========================================================= -->
 
 <section
     class="contact-section"
@@ -1311,11 +1519,19 @@
                 START A PROJECT
             </small>
 
+
             <h2>
+
                 LET'S BUILD
+
                 <br>
-                <span>SOMETHING GREAT.</span>
+
+                <span>
+                    SOMETHING GREAT.
+                </span>
+
             </h2>
+
 
             <p>
                 Tell us about your project. Our team will
@@ -1327,15 +1543,16 @@
 
 
 
-        <!-- IMPORTANT:
-             IDs BELOW MUST MATCH script.js
-        -->
+        <!-- CONTACT FORM -->
 
         <form
             class="contact-form"
             id="projectForm"
+            novalidate
         >
 
+
+            <!-- NAME + COMPANY -->
 
             <div class="form-row">
 
@@ -1346,11 +1563,13 @@
                         YOUR NAME
                     </label>
 
+
                     <input
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Enter your name"
+                        autocomplete="name"
                         required
                     >
 
@@ -1364,11 +1583,13 @@
                         COMPANY / BUSINESS
                     </label>
 
+
                     <input
                         type="text"
                         id="company"
                         name="company"
                         placeholder="Your company name"
+                        autocomplete="organization"
                     >
 
                 </div>
@@ -1377,6 +1598,8 @@
             </div>
 
 
+
+            <!-- EMAIL + WHATSAPP -->
 
             <div class="form-row">
 
@@ -1387,11 +1610,13 @@
                         EMAIL ADDRESS
                     </label>
 
+
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="you@example.com"
+                        autocomplete="email"
                         required
                     >
 
@@ -1401,17 +1626,17 @@
 
                 <div class="form-group">
 
-                    <!-- FIXED: ID = whatsapp -->
-
                     <label for="whatsapp">
                         WHATSAPP NUMBER
                     </label>
+
 
                     <input
                         type="tel"
                         id="whatsapp"
                         name="whatsapp"
                         placeholder="+91 XXXXX XXXXX"
+                        autocomplete="tel"
                         required
                     >
 
@@ -1421,6 +1646,8 @@
             </div>
 
 
+
+            <!-- SERVICE -->
 
             <div class="form-group">
 
@@ -1494,9 +1721,9 @@
 
 
 
-            <div class="form-group">
+            <!-- PROJECT DETAILS -->
 
-                <!-- FIXED: ID = details -->
+            <div class="form-group">
 
                 <label for="details">
                     PROJECT DETAILS
@@ -1514,6 +1741,8 @@
             </div>
 
 
+
+            <!-- SUBMIT -->
 
             <button
                 type="submit"
@@ -1534,21 +1763,28 @@
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer>
 
 
     <div class="logo">
-        N+ <span>MEDIA & DIGITAL</span>
+
+        N+
+
+        <span>
+            MEDIA & DIGITAL
+        </span>
+
     </div>
 
 
     <p>
         Your Vision. Our Technology. Real Results.
     </p>
+
 
 
     <div class="footer-links">
@@ -1593,85 +1829,90 @@
 
 
 
-<!-- =====================================================
-     WHATSAPP FLOATING BUTTON
-===================================================== -->
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
 
 <a
     href="https://wa.me/918072441662?text=Hi%20N%2B%20Media%20%26%20Digital%2C%20I%20want%20to%20discuss%20a%20project."
     class="whatsapp-btn"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     aria-label="Chat with N+ Media & Digital on WhatsApp"
 >
-    <span>WHATSAPP</span>
+    <span>
+        WHATSAPP
+    </span>
 </a>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      SCROLL REVEAL
-===================================================== -->
+========================================================= -->
 
 <script>
 
-    const revealElements =
-        document.querySelectorAll(
-            "section, .cta, .portfolio-card, .why-card, .value, .step"
+const revealElements =
+    document.querySelectorAll(
+        "section, .portfolio-card, .why-card, .value, .step"
+    );
+
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("reveal");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
         );
 
 
-    if ("IntersectionObserver" in window) {
+    revealElements.forEach(element => {
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
+        revealObserver.observe(element);
 
-                    entries.forEach(entry => {
+    });
 
-                        if (entry.isIntersecting) {
+} else {
 
-                            entry.target.classList.add("reveal");
+    revealElements.forEach(element => {
 
-                            observer.unobserve(entry.target);
+        element.classList.add("reveal");
 
-                        }
+    });
 
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        revealElements.forEach(element => {
-
-            revealObserver.observe(element);
-
-        });
-
-    } else {
-
-        revealElements.forEach(element => {
-
-            element.classList.add("reveal");
-
-        });
-
-    }
+}
 
 </script>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN JAVASCRIPT
-===================================================== -->
+========================================================= -->
 
 <script src="script.js"></script>
 
 
 </body>
+
 </html>
