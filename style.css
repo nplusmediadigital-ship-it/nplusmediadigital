@@ -1,12 +1,12 @@
-/* =========================================
+/* =========================================================
    N+ MEDIA & DIGITAL
-   RESPONSIVE FINAL FIX
-   ========================================= */
+   FINAL RESPONSIVE FIX
+   ========================================================= */
 
 
-/* =========================================
-   GLOBAL RESPONSIVE SAFETY
-   ========================================= */
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 html {
     scroll-behavior: smooth;
@@ -14,8 +14,8 @@ html {
 }
 
 body {
-    width: 100%;
     margin: 0;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -28,9 +28,9 @@ img {
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-   ========================================= */
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
@@ -41,87 +41,38 @@ img {
         margin-right: auto;
     }
 
-
-    /* ==============================
-       NAVIGATION
-       ============================== */
-
-    .nav-links {
-        gap: 24px;
-    }
-
-
-    /* ==============================
-       HERO
-       ============================== */
-
-    .hero h1 {
-        font-size: clamp(52px, 7vw, 88px);
-    }
-
-
-    /* ==============================
-       SERVICES
-       ============================== */
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-    }
-
-
-    /* ==============================
-       PORTFOLIO
-       ============================== */
-
+    .services-grid,
     .portfolio-grid {
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
     }
-
-
-    /* ==============================
-       WHY N+
-       ============================== */
 
     .why-grid {
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
     }
 
+    .about-grid,
+    .about-box {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 
-    /* ==============================
-       PROCESS
-       IMPORTANT FIX
-       ============================== */
-
-    .process-grid {
+    /* ACTUAL PROCESS CLASS */
+    #process > .process {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 35px !important;
+        column-gap: 30px !important;
+        row-gap: 45px !important;
 
         width: 100%;
         height: auto !important;
         min-height: 0 !important;
 
-        align-items: start;
+        margin-top: 55px;
     }
 
-    .process-item {
+    #process > .process > .step {
         width: 100%;
         min-width: 0;
-        height: auto !important;
-    }
-
-
-    /* Prevent huge empty process area */
-
-    .process,
-    #process,
-    .process-section {
         height: auto !important;
         min-height: 0 !important;
     }
@@ -129,38 +80,23 @@ img {
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media (max-width: 768px) {
 
-
-    /* =====================================
-       GLOBAL
-       ===================================== */
-
-    html {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
+    html,
     body {
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
     }
 
-    section {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
 
-
-    /* =====================================
+    /* =====================================================
        CONTAINER
-       ===================================== */
+       ===================================================== */
 
     .container {
         width: calc(100% - 32px);
@@ -170,48 +106,40 @@ img {
     }
 
 
-    /* =====================================
+    /* =====================================================
        HEADER
-       ===================================== */
+       ===================================================== */
 
     header {
         width: 100%;
-        max-width: 100%;
     }
 
-    .navbar {
+    nav {
         width: 100%;
-        min-height: 76px;
+        min-height: 72px;
         padding: 0 18px;
     }
 
     .logo {
         font-size: 20px;
         white-space: nowrap;
-        flex-shrink: 0;
     }
 
 
-    /* =====================================
-       MOBILE MENU BUTTON
-       ===================================== */
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
 
     .menu-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        width: 52px;
-        height: 52px;
+        width: 48px;
+        height: 48px;
 
         flex-shrink: 0;
-        cursor: pointer;
     }
-
-
-    /* =====================================
-       MOBILE NAVIGATION
-       ===================================== */
 
     .nav-links {
         position: absolute;
@@ -220,14 +148,13 @@ img {
         left: 0;
 
         width: 100%;
-        max-width: 100%;
 
         display: flex;
         flex-direction: column;
 
         gap: 0;
 
-        padding: 12px 20px 20px;
+        padding: 10px 18px 18px;
 
         background: rgba(3, 8, 13, 0.98);
 
@@ -254,31 +181,27 @@ img {
 
     .nav-links a {
         width: 100%;
-        padding: 16px 8px;
+        padding: 15px 8px;
         text-align: center;
     }
 
 
-    /* =====================================
-       HIDE DESKTOP QUOTE BUTTON
-       ===================================== */
+    /* Hide desktop quote button */
 
-    .navbar .quote-btn,
-    .navbar .get-quote,
-    .navbar .btn {
+    .nav-btn {
         display: none;
     }
 
 
-    /* =====================================
+    /* =====================================================
        HERO
-       ===================================== */
+       ===================================================== */
 
     .hero {
         width: 100%;
-        min-height: calc(100vh - 76px);
+        min-height: calc(100vh - 72px);
 
-        padding: 90px 0 70px;
+        padding: 80px 0 60px;
 
         display: flex;
         align-items: center;
@@ -296,11 +219,13 @@ img {
 
         margin: 20px auto;
 
-        font-size: clamp(42px, 12vw, 68px);
+        font-size: clamp(40px, 12vw, 68px);
+
         line-height: 0.98;
 
+        letter-spacing: -2px;
+
         overflow-wrap: break-word;
-        word-break: normal;
     }
 
     .hero p {
@@ -309,92 +234,112 @@ img {
 
         margin: 0 auto 28px;
 
+        padding: 0;
+
         font-size: 15px;
         line-height: 1.7;
     }
 
 
-    /* =====================================
+    /* =====================================================
        HERO BUTTONS
-       ===================================== */
+       ===================================================== */
 
     .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-
         width: 100%;
         max-width: 360px;
 
         margin: 0 auto;
 
+        display: flex;
+        flex-direction: column;
+
         gap: 12px;
     }
 
-    .hero-buttons a {
+    .hero-buttons .btn {
         width: 100%;
-        text-align: center;
     }
 
 
-    /* =====================================
-       GENERAL SECTION
-       ===================================== */
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
 
     .section-title {
+        width: 100%;
+    }
+
+    .section-title h2 {
         font-size: clamp(38px, 10vw, 58px);
         line-height: 1;
     }
 
-    .section-subtitle {
+    .section-title p {
         font-size: 15px;
         line-height: 1.7;
     }
 
 
-    /* =====================================
+    /* =====================================================
        SERVICES
-       ===================================== */
+       ===================================================== */
 
     .services-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 18px;
 
         width: 100%;
     }
 
+    .card,
     .service-card {
         width: 100%;
         min-width: 0;
     }
 
 
-    /* =====================================
+    /* =====================================================
        ABOUT
-       ===================================== */
+       ===================================================== */
 
+    .about-box,
     .about-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 35px;
 
         width: 100%;
     }
 
+    .about-text h2,
     .about-content h2 {
         font-size: clamp(42px, 11vw, 64px);
+
         line-height: 0.98;
+
+        letter-spacing: -2px;
     }
 
+    .values,
     .about-cards {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 16px;
 
@@ -402,14 +347,14 @@ img {
     }
 
 
-    /* =====================================
+    /* =====================================================
        PORTFOLIO
-       ===================================== */
+       ===================================================== */
 
     .portfolio-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 20px;
 
@@ -421,30 +366,28 @@ img {
         min-width: 0;
     }
 
+    .portfolio-image,
     .portfolio-card img {
         width: 100%;
         height: auto;
+
         display: block;
     }
 
+    .portfolio-content,
     .portfolio-card-content {
         padding: 22px;
     }
 
-    .portfolio-card h3 {
-        font-size: 21px;
-        line-height: 1.2;
-    }
 
-
-    /* =====================================
+    /* =====================================================
        WHY N+
-       ===================================== */
+       ===================================================== */
 
     .why-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 18px;
 
@@ -457,71 +400,93 @@ img {
     }
 
 
-    /* =====================================
-       PROCESS
-       MOBILE FIX
-       ===================================== */
+    /* =====================================================
+       🔥 PROCESS — ACTUAL HTML FIX
+       ===================================================== */
 
-    .process-grid {
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        gap: 28px !important;
-
-        width: 100%;
-
-        height: auto !important;
-        min-height: 0 !important;
-
-        margin: 0;
-
-        align-items: start;
-    }
-
-    .process-item {
-        width: 100%;
-        min-width: 0;
-
-        height: auto !important;
-
-        text-align: center;
-    }
-
-    .process-item h3 {
-        margin-bottom: 8px;
-    }
-
-    .process-item p {
-        margin-top: 0;
-    }
-
-
-    /* =====================================
-       PROCESS SECTION HEIGHT FIX
-       ===================================== */
-
-    .process,
-    #process,
-    .process-section {
+    #process {
         width: 100%;
 
         height: auto !important;
         min-height: 0 !important;
 
         padding-top: 70px;
-        padding-bottom: 70px;
+        padding-bottom: 55px;
     }
 
 
-    /* =====================================
-       CONTACT SECTION
-       ===================================== */
+    #process > .section-title {
+        margin-bottom: 0;
+    }
+
+
+    #process > .process {
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        column-gap: 25px !important;
+        row-gap: 40px !important;
+
+        width: 100%;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin-top: 50px;
+
+        padding: 0;
+
+        align-items: start;
+    }
+
+
+    #process > .process > .step {
+        display: block !important;
+
+        width: 100%;
+        min-width: 0;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+    }
+
+
+    #process > .process > .step .number {
+        margin-bottom: 12px;
+    }
+
+
+    #process > .process > .step h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+
+        font-size: 15px;
+    }
+
+
+    #process > .process > .step p {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
 
     .contact-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 35px;
 
@@ -529,17 +494,14 @@ img {
     }
 
     .contact-content h2 {
-        font-size: clamp(44px, 12vw, 68px);
+        font-size: clamp(42px, 12vw, 68px);
+
         line-height: 0.98;
     }
 
-
-    /* =====================================
-       CONTACT FORM
-       ===================================== */
-
     .contact-form {
         width: 100%;
+        max-width: 100%;
         min-width: 0;
 
         padding: 24px;
@@ -550,7 +512,7 @@ img {
     .form-grid {
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         gap: 18px;
 
@@ -581,22 +543,34 @@ img {
     }
 
 
-    /* =====================================
+    /* =====================================================
+       CTA
+       ===================================================== */
+
+    .cta {
+        width: 100%;
+
+        margin: 35px auto !important;
+
+        padding: 60px 20px !important;
+
+        box-sizing: border-box;
+    }
+
+    .cta-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 60px 20px;
+    }
+
+
+    /* =====================================================
        FOOTER
-       ===================================== */
+       ===================================================== */
 
     footer {
         width: 100%;
-        text-align: center;
-    }
-
-    .footer-content {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 24px;
-
         text-align: center;
     }
 
@@ -611,44 +585,36 @@ img {
     }
 
 
-    /* =====================================
-       FLOATING WHATSAPP
-       ===================================== */
+    /* =====================================================
+       WHATSAPP
+       ===================================================== */
 
-    .whatsapp-button,
     .whatsapp-btn {
-        right: 16px;
-        bottom: 16px;
+        right: 16px !important;
+        bottom: 16px !important;
 
-        max-width: calc(100vw - 32px);
+        min-width: 125px;
+        height: 46px;
+
+        padding: 0 18px;
     }
 
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media (max-width: 480px) {
-
-
-    /* =====================================
-       CONTAINER
-       ===================================== */
 
     .container {
         width: calc(100% - 24px);
     }
 
-
-    /* =====================================
-       HEADER
-       ===================================== */
-
-    .navbar {
+    nav {
+        min-height: 68px;
         padding: 0 12px;
-        min-height: 70px;
     }
 
     .logo {
@@ -656,23 +622,23 @@ img {
     }
 
     .menu-toggle {
-        width: 48px;
-        height: 48px;
+        width: 46px;
+        height: 46px;
     }
 
 
-    /* =====================================
-       HERO
-       ===================================== */
+    /* HERO */
 
     .hero {
-        min-height: calc(100vh - 70px);
+        min-height: calc(100vh - 68px);
 
-        padding: 75px 0 55px;
+        padding: 70px 0 50px;
     }
 
     .hero h1 {
-        font-size: clamp(38px, 11.5vw, 55px);
+        font-size: clamp(36px, 11.5vw, 54px);
+
+        letter-spacing: -1.5px;
     }
 
     .hero p {
@@ -680,71 +646,78 @@ img {
     }
 
 
-    /* =====================================
-       SECTION
-       ===================================== */
+    /* SECTION */
 
-    .section-title {
+    .section-title h2 {
         font-size: clamp(34px, 10vw, 48px);
     }
 
 
-    /* =====================================
-       CARDS
-       ===================================== */
+    /* PROCESS */
 
-    .service-card,
+    #process {
+        padding-top: 60px;
+        padding-bottom: 45px;
+    }
+
+    #process > .process {
+        grid-template-columns: 1fr 1fr !important;
+
+        column-gap: 18px !important;
+        row-gap: 35px !important;
+
+        margin-top: 40px;
+    }
+
+    #process > .process > .step {
+        text-align: center;
+    }
+
+    #process > .process > .step p {
+        font-size: 12px;
+    }
+
+
+    /* CARDS */
+
+    .card,
     .why-card,
     .portfolio-card {
-        width: 100%;
         border-radius: 18px;
     }
 
 
-    /* =====================================
-       PROCESS
-       ===================================== */
-
-    .process-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    .process-item {
-        text-align: center;
-    }
-
-
-    /* =====================================
-       CONTACT
-       ===================================== */
+    /* CONTACT */
 
     .contact-form {
         padding: 18px;
         border-radius: 18px;
     }
 
-    .contact-content h2 {
-        font-size: clamp(40px, 11.5vw, 56px);
+    .cta {
+        margin: 25px auto !important;
+
+        padding: 50px 16px !important;
+    }
+
+    .cta h2 {
+        font-size: clamp(40px, 11vw, 54px);
     }
 
 
-    /* =====================================
-       WHATSAPP
-       ===================================== */
+    /* WHATSAPP */
 
-    .whatsapp-button,
     .whatsapp-btn {
-        right: 12px;
-        bottom: 12px;
+        right: 12px !important;
+        bottom: 12px !important;
     }
 
 }
 
 
-/* =========================================
+/* =========================================================
    VERY SMALL PHONES
-   ========================================= */
+   ========================================================= */
 
 @media (max-width: 360px) {
 
@@ -757,19 +730,25 @@ img {
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 35px;
     }
 
-    .section-title {
-        font-size: 32px;
+    .section-title h2 {
+        font-size: 31px;
     }
+
+
+    /* PROCESS */
+
+    #process > .process {
+        grid-template-columns: 1fr !important;
+
+        row-gap: 28px !important;
+    }
+
 
     .contact-form {
         padding: 15px;
-    }
-
-    .process-grid {
-        gap: 20px !important;
     }
 
 }
