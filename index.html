@@ -36,12 +36,14 @@
 
 
 <!-- =========================================================
-     HEADER / NAVIGATION
+     HEADER
 ========================================================= -->
 
 <header>
 
-    <nav>
+    <nav class="navbar">
+
+        <!-- LOGO -->
 
         <a
             href="#home"
@@ -53,40 +55,56 @@
         </a>
 
 
+        <!-- NAVIGATION -->
+
         <ul class="nav-links">
 
             <li>
-                <a href="#home">Home</a>
+                <a href="#home">
+                    Home
+                </a>
             </li>
 
             <li>
-                <a href="#about">About</a>
+                <a href="#about">
+                    About
+                </a>
             </li>
 
             <li>
-                <a href="#services">Services</a>
+                <a href="#services">
+                    Services
+                </a>
             </li>
 
             <li>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#portfolio">
+                    Portfolio
+                </a>
             </li>
 
             <li>
-                <a href="#why">Why N+</a>
+                <a href="#why">
+                    Why N+
+                </a>
             </li>
 
             <li>
-                <a href="#process">Process</a>
+                <a href="#process">
+                    Process
+                </a>
             </li>
 
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact">
+                    Contact
+                </a>
             </li>
 
         </ul>
 
 
-        <!-- MOBILE MENU -->
+        <!-- MOBILE MENU BUTTON -->
 
         <button
             class="menu-toggle"
@@ -104,7 +122,7 @@
 
         <a
             href="#contact"
-            class="nav-btn"
+            class="nav-btn quote-btn"
         >
             GET A QUOTE
         </a>
@@ -120,6 +138,7 @@
 ========================================================= -->
 
 <main id="home">
+
 
 
 <!-- =========================================================
@@ -151,11 +170,9 @@
 
 
         <p>
-
             We build modern websites, apps, AI automation
             and digital experiences that help businesses
             grow, scale and stand out.
-
         </p>
 
 
@@ -217,7 +234,7 @@
 
         <!-- SERVICE 01 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -262,7 +279,7 @@
 
         <!-- SERVICE 02 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -305,7 +322,7 @@
 
         <!-- SERVICE 03 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -358,7 +375,7 @@
 
         <!-- SERVICE 04 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -395,7 +412,7 @@
 
         <!-- SERVICE 05 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -440,7 +457,7 @@
 
         <!-- SERVICE 06 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -481,7 +498,7 @@
 
         <!-- SERVICE 07 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -530,7 +547,7 @@
 
         <!-- SERVICE 08 -->
 
-        <div class="card">
+        <div class="card service-card">
 
             <div class="icon">
 
@@ -584,10 +601,12 @@
 
 <section id="about">
 
-    <div class="about-box">
+    <div class="about-box about-grid">
 
 
-        <div class="about-text">
+        <!-- ABOUT CONTENT -->
+
+        <div class="about-text about-content">
 
             <small class="eyebrow">
                 ABOUT N+
@@ -628,7 +647,9 @@
 
 
 
-        <div class="values">
+        <!-- VALUES -->
+
+        <div class="values about-cards">
 
 
             <div class="value">
@@ -1355,18 +1376,14 @@
 
 
 
-    <!-- IMPORTANT:
-         ACTUAL PROCESS STRUCTURE
-         .process
-         .step
-    -->
+    <!-- PROCESS GRID -->
 
-    <div class="process">
+    <div class="process process-grid">
 
 
         <!-- STEP 01 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 01
@@ -1388,7 +1405,7 @@
 
         <!-- STEP 02 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 02
@@ -1410,7 +1427,7 @@
 
         <!-- STEP 03 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 03
@@ -1432,7 +1449,7 @@
 
         <!-- STEP 04 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 04
@@ -1454,7 +1471,7 @@
 
         <!-- STEP 05 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 05
@@ -1476,7 +1493,7 @@
 
         <!-- STEP 06 -->
 
-        <div class="step">
+        <div class="step process-item">
 
             <div class="number">
                 06
@@ -1502,18 +1519,20 @@
 
 
 <!-- =========================================================
-     CONTACT / PROJECT ENQUIRY
+     CONTACT
 ========================================================= -->
 
 <section
-    class="contact-section"
     id="contact"
+    class="contact-section"
 >
 
-    <div class="contact-container">
+    <div class="contact-container contact-grid">
 
 
-        <div class="contact-heading">
+        <!-- CONTACT CONTENT -->
+
+        <div class="contact-heading contact-content">
 
             <small>
                 START A PROJECT
@@ -1554,7 +1573,7 @@
 
             <!-- NAME + COMPANY -->
 
-            <div class="form-row">
+            <div class="form-row form-grid">
 
 
                 <div class="form-group">
@@ -1601,7 +1620,7 @@
 
             <!-- EMAIL + WHATSAPP -->
 
-            <div class="form-row">
+            <div class="form-row form-grid">
 
 
                 <div class="form-group">
@@ -1770,60 +1789,68 @@
 <footer>
 
 
-    <div class="logo">
+    <div class="footer-content">
 
-        N+
 
-        <span>
-            MEDIA & DIGITAL
-        </span>
+        <!-- FOOTER LOGO -->
+
+        <div class="logo">
+
+            N+
+
+            <span>
+                MEDIA & DIGITAL
+            </span>
+
+        </div>
+
+
+        <p>
+            Your Vision. Our Technology. Real Results.
+        </p>
+
+
+        <!-- FOOTER LINKS -->
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#portfolio">
+                Portfolio
+            </a>
+
+            <a href="#why">
+                Why N+
+            </a>
+
+            <a href="#process">
+                Process
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 N+ Media & Digital. All Rights Reserved.
+        </p>
+
 
     </div>
-
-
-    <p>
-        Your Vision. Our Technology. Real Results.
-    </p>
-
-
-
-    <div class="footer-links">
-
-        <a href="#home">
-            Home
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#services">
-            Services
-        </a>
-
-        <a href="#portfolio">
-            Portfolio
-        </a>
-
-        <a href="#why">
-            Why N+
-        </a>
-
-        <a href="#process">
-            Process
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </div>
-
-
-    <p>
-        © 2026 N+ Media & Digital. All Rights Reserved.
-    </p>
-
 
 </footer>
 
@@ -1840,9 +1867,11 @@
     rel="noopener noreferrer"
     aria-label="Chat with N+ Media & Digital on WhatsApp"
 >
+
     <span>
         WHATSAPP
     </span>
+
 </a>
 
 
@@ -1892,7 +1921,8 @@ if ("IntersectionObserver" in window) {
 
     });
 
-} else {
+}
+else {
 
     revealElements.forEach(element => {
 
