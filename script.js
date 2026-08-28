@@ -1,9 +1,16 @@
 // ==========================================================
 // N+ MEDIA & DIGITAL
-// MAIN JAVASCRIPT
+// FINAL MAIN JAVASCRIPT
 // ==========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // ======================================================
+    // CONFIGURATION
+    // ======================================================
+
+    const BUSINESS_WHATSAPP = "918072441662";
+
 
     // ======================================================
     // ELEMENTS
@@ -15,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.querySelector(".contact-form");
     const contactSection = document.querySelector("#contact");
 
-    const businessWhatsApp = "918072441662";
-
 
     // ======================================================
     // MOBILE MENU
@@ -24,35 +29,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openMobileMenu() {
 
-        if (!menuToggle || !navLinks) return;
+        if (!menuToggle || !navLinks) {
+            return;
+        }
 
         menuToggle.classList.add("active");
         navLinks.classList.add("active");
 
-        menuToggle.setAttribute("aria-expanded", "true");
-        menuToggle.setAttribute("aria-label", "Close menu");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close menu"
+        );
     }
 
 
     function closeMobileMenu() {
 
-        if (!menuToggle || !navLinks) return;
+        if (!menuToggle || !navLinks) {
+            return;
+        }
 
         menuToggle.classList.remove("active");
         navLinks.classList.remove("active");
 
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open menu");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open menu"
+        );
     }
 
 
     function toggleMobileMenu() {
 
-        if (!menuToggle || !navLinks) return;
+        if (!menuToggle || !navLinks) {
+            return;
+        }
 
-        const isOpen = navLinks.classList.contains("active");
-
-        if (isOpen) {
+        if (navLinks.classList.contains("active")) {
             closeMobileMenu();
         } else {
             openMobileMenu();
@@ -60,9 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    if (menuToggle && navLinks) {
+    // ======================================================
+    // INITIAL MOBILE MENU STATE
+    // ======================================================
 
-        // Initial accessibility state
+    if (menuToggle && navLinks) {
 
         menuToggle.setAttribute(
             "aria-expanded",
@@ -75,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        // Toggle menu
+        // Toggle button
 
         menuToggle.addEventListener(
             "click",
@@ -85,12 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.stopPropagation();
 
                 toggleMobileMenu();
-
             }
         );
 
 
-        // Close menu when navigation link is clicked
+        // Close after clicking navigation link
 
         navLinks.querySelectorAll("a").forEach(
             function (link) {
@@ -111,25 +135,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ======================================================
-    // CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+    // CLOSE MENU WHEN CLICKING OUTSIDE
     // ======================================================
 
     document.addEventListener(
         "click",
         function (event) {
 
-            if (!menuToggle || !navLinks) return;
+            if (!menuToggle || !navLinks) {
+                return;
+            }
 
-            const clickedInsideMenu =
+            const clickedInsideNav =
                 navLinks.contains(event.target);
 
-            const clickedToggle =
+            const clickedMenuButton =
                 menuToggle.contains(event.target);
+
 
             if (
                 navLinks.classList.contains("active") &&
-                !clickedInsideMenu &&
-                !clickedToggle
+                !clickedInsideNav &&
+                !clickedMenuButton
             ) {
 
                 closeMobileMenu();
@@ -141,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ======================================================
-    // ESCAPE KEY — CLOSE MOBILE MENU
+    // ESCAPE KEY
     // ======================================================
 
     document.addEventListener(
@@ -159,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ======================================================
-    // RESET MOBILE MENU ON DESKTOP
+    // RESET MENU WHEN SWITCHING TO DESKTOP
     // ======================================================
 
     window.addEventListener(
@@ -192,37 +219,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     const targetId =
                         this.getAttribute("href");
 
-                    // Ignore empty "#"
+
+                    // Ignore empty #
 
                     if (
                         !targetId ||
                         targetId === "#"
                     ) {
-
                         return;
-
                     }
 
 
                     const target =
                         document.querySelector(targetId);
 
+
+                    // If target doesn't exist,
+                    // allow normal browser behaviour
+
                     if (!target) {
-
                         return;
-
                     }
 
 
                     event.preventDefault();
 
 
-                    // Close mobile menu
-
                     closeMobileMenu();
 
-
-                    // Smooth scroll
 
                     target.scrollIntoView({
                         behavior: "smooth",
@@ -232,15 +256,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Update URL without jumping
 
-                    if (
-                        history.pushState
-                    ) {
+                    try {
 
-                        history.pushState(
+                        history.replaceState(
                             null,
                             "",
                             targetId
                         );
+
+                    } catch (error) {
+
+                        // Ignore history errors
 
                     }
 
@@ -252,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ======================================================
-    // GET A QUOTE BUTTON
+    // GET A QUOTE
     // ======================================================
 
     document.querySelectorAll(
@@ -281,7 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         event.preventDefault();
 
-
                         closeMobileMenu();
 
 
@@ -291,17 +316,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
 
 
-                        // Update URL
+                        try {
 
-                        if (
-                            history.pushState
-                        ) {
-
-                            history.pushState(
+                            history.replaceState(
                                 null,
                                 "",
                                 "#contact"
                             );
+
+                        } catch (error) {
+
+                            // Ignore history errors
 
                         }
 
@@ -327,9 +352,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
 
 
-                // ==========================================
+                // ==================================================
                 // FORM FIELDS
-                // ==========================================
+                // ==================================================
 
                 const nameField =
                     document.querySelector("#name");
@@ -350,9 +375,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector("#details");
 
 
-                // ==========================================
+                // ==================================================
                 // GET VALUES
-                // ==========================================
+                // ==================================================
 
                 const name =
                     nameField
@@ -385,9 +410,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         : "";
 
 
-                // ==========================================
+                // ==================================================
                 // NAME VALIDATION
-                // ==========================================
+                // ==================================================
 
                 if (!name) {
 
@@ -396,19 +421,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     if (nameField) {
-
                         nameField.focus();
-
                     }
 
                     return;
-
                 }
 
 
-                // ==========================================
+                // ==================================================
                 // EMAIL VALIDATION
-                // ==========================================
+                // ==================================================
 
                 if (!email) {
 
@@ -417,13 +439,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     if (emailField) {
-
                         emailField.focus();
-
                     }
 
                     return;
-
                 }
 
 
@@ -440,43 +459,72 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     if (emailField) {
-
                         emailField.focus();
-
                     }
 
                     return;
-
                 }
 
 
-                // ==========================================
-                // SERVICE VALIDATION
-                // ==========================================
+                // ==================================================
+                // WHATSAPP VALIDATION
+                // ==================================================
+
+                if (!whatsapp) {
+
+                    alert(
+                        "Please enter your WhatsApp number."
+                    );
+
+                    if (whatsappField) {
+                        whatsappField.focus();
+                    }
+
+                    return;
+                }
+
+
+                const whatsappDigits =
+                    whatsapp.replace(/\D/g, "");
+
 
                 if (
-                    !service ||
-                    service === "Select a service"
+                    whatsappDigits.length < 10
                 ) {
+
+                    alert(
+                        "Please enter a valid WhatsApp number."
+                    );
+
+                    if (whatsappField) {
+                        whatsappField.focus();
+                    }
+
+                    return;
+                }
+
+
+                // ==================================================
+                // SERVICE VALIDATION
+                // ==================================================
+
+                if (!service) {
 
                     alert(
                         "Please select a service."
                     );
 
                     if (serviceField) {
-
                         serviceField.focus();
-
                     }
 
                     return;
-
                 }
 
 
-                // ==========================================
+                // ==================================================
                 // PROJECT DETAILS VALIDATION
-                // ==========================================
+                // ==================================================
 
                 if (!details) {
 
@@ -485,19 +533,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     if (detailsField) {
-
                         detailsField.focus();
-
                     }
 
                     return;
-
                 }
 
 
-                // ==========================================
+                // ==================================================
                 // CREATE WHATSAPP MESSAGE
-                // ==========================================
+                // ==================================================
 
                 const message =
                     "N+ MEDIA & DIGITAL - NEW ENQUIRY\n" +
@@ -519,10 +564,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "\n" +
 
                     "WhatsApp: " +
-                    (
-                        whatsapp ||
-                        "Not provided"
-                    ) +
+                    whatsapp +
                     "\n" +
 
                     "Service Required: " +
@@ -537,26 +579,38 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Sent from N+ Media & Digital Website";
 
 
-                // ==========================================
-                // WHATSAPP URL
-                // ==========================================
+                // ==================================================
+                // CREATE WHATSAPP URL
+                // ==================================================
 
                 const whatsappURL =
                     "https://wa.me/" +
-                    businessWhatsApp +
+                    BUSINESS_WHATSAPP +
                     "?text=" +
                     encodeURIComponent(message);
 
 
-                // ==========================================
+                // ==================================================
                 // OPEN WHATSAPP
-                // ==========================================
+                // ==================================================
 
-                window.open(
-                    whatsappURL,
-                    "_blank",
-                    "noopener,noreferrer"
-                );
+                const newWindow =
+                    window.open(
+                        whatsappURL,
+                        "_blank"
+                    );
+
+
+                // ==================================================
+                // FALLBACK
+                // ==================================================
+
+                if (!newWindow) {
+
+                    window.location.href =
+                        whatsappURL;
+
+                }
 
             }
         );
@@ -587,81 +641,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const whatsappURL =
                         "https://wa.me/" +
-                        businessWhatsApp +
+                        BUSINESS_WHATSAPP +
                         "?text=" +
                         encodeURIComponent(message);
 
 
-                    window.open(
-                        whatsappURL,
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
+                    const newWindow =
+                        window.open(
+                            whatsappURL,
+                            "_blank"
+                        );
+
+
+                    if (!newWindow) {
+
+                        window.location.href =
+                            whatsappURL;
+
+                    }
 
                 }
             );
 
         }
     );
-
-
-    // ======================================================
-    // NORMAL WHATSAPP LINKS
-    // ======================================================
-    // Any other WhatsApp link that is NOT the floating
-    // button will work normally.
-    // ======================================================
-
-    document.querySelectorAll(
-        'a[href*="wa.me"], a[href*="whatsapp"]'
-    ).forEach(
-        function (link) {
-
-            const isFloatingButton =
-                link.matches(
-                    ".whatsapp-button, .whatsapp-btn"
-                );
-
-
-            if (isFloatingButton) {
-
-                return;
-
-            }
-
-
-            // Keep normal WhatsApp links working naturally.
-
-        }
-    );
-
-
-    // ======================================================
-    // PREVENT FORM DOUBLE SUBMISSION
-    // ======================================================
-
-    if (contactForm) {
-
-        contactForm.addEventListener(
-            "submit",
-            function () {
-
-                const submitButton =
-                    contactForm.querySelector(
-                        'button[type="submit"]'
-                    );
-
-
-                if (submitButton) {
-
-                    submitButton.blur();
-
-                }
-
-            }
-        );
-
-    }
 
 
     // ======================================================
