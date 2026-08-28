@@ -123,7 +123,6 @@ if (contactForm) {
             "Project Details:\n" +
             details;
 
-        // YOUR BUSINESS WHATSAPP NUMBER
         const whatsappNumber = "918072441662";
 
         const whatsappURL =
@@ -132,6 +131,9 @@ if (contactForm) {
             "?text=" +
             encodeURIComponent(message);
 
-        window.open(whatsappURL, "_blank");
+        // Direct navigation to WhatsApp
+        window.location.href = whatsappURL;
+
     });
+
 }
