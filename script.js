@@ -258,36 +258,29 @@ if (contactForm) {
 
 }
 
-
 // ================================
-// FLOATING WHATSAPP BUTTON
+// WHATSAPP BUTTON
 // ================================
 
-const whatsappButtons =
-    document.querySelectorAll(".whatsapp-button");
+const businessWhatsApp = "918072441662";
 
-
-whatsappButtons.forEach(function (button) {
+document.querySelectorAll(
+    ".whatsapp-button, .whatsapp-btn, a[href*='wa.me']"
+).forEach(function (button) {
 
     button.addEventListener("click", function (event) {
 
         event.preventDefault();
 
-
         const message =
             "Hi N+ Media & Digital! 👋\n\n" +
             "I would like to know more about your digital services.";
 
-
-        const whatsappNumber = "918072441662";
-
-
         const whatsappURL =
             "https://wa.me/" +
-            whatsappNumber +
+            businessWhatsApp +
             "?text=" +
             encodeURIComponent(message);
-
 
         window.open(
             whatsappURL,
